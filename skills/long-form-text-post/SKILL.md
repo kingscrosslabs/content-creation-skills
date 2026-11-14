@@ -63,8 +63,8 @@ Pick exactly one:
 
 The user's specifics (results, numbers, credentials, hard-won experience from the context files) make the payload trustworthy. Use them as proof attached to the payload.
 
-- Weak: "Here's what building my company taught me about focus." The story is the post.
-- Strong: "We killed 4 of our 5 product bets in 6 months. Here's the 3-question kill test we ran on each one." The story is the proof; the kill test is the save.
+- Weak: "Here's what running my bakery taught me about pricing." The story is the post.
+- Strong: "I raised prices 30% and lost only 2 regulars. Here's the 3-step script I used to tell customers." The story is the proof; the script is the save.
 
 ### One payload per post
 
