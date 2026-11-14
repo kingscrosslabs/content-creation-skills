@@ -1,18 +1,18 @@
 # Platform notes: Substack vs. X Articles
 
-Short on purpose. Features change; anything marked (verify) should be checked against the platform's current help docs.
+Short on purpose. Checked against official help docs, November 2026. Platforms change these often.
 
 ## Quick comparison
 
 | | Substack | X Articles |
 |---|---|---|
 | What it is | A newsletter post: published on the web and emailed to subscribers | A long-form post that lives on X, shown as a card in the feed |
-| Who can publish | Anyone with a Substack publication | Paid X subscribers only (verify which tiers) |
+| Who can publish | Anyone with a Substack publication | Paid X subscribers only (Premium and Premium+, plus business and organization accounts) |
 | Delivery | Email inbox plus the Substack app and web | X feed only; no email |
-| Length | No practical limit; email clients may clip very long posts (verify) | Long posts supported; exact limit (verify) |
-| Formatting | Headings, bold/italic, lists, quotes, images, embeds, buttons, footnotes, paywall | Headings, bold/italic, lists, quotes, images, embedded posts (verify full set) |
+| Length | No practical limit; Gmail clips emails over about 102KB behind "View entire message" | Long posts supported; X doesn't publish a limit |
+| Formatting | Headings, bold/italic, lists, quotes, images, embeds, buttons, footnotes, paywall | Headings, bold/italic, strikethrough, lists, images, video, GIFs, embedded posts, links |
 | Discovery | Subscribers, Notes, recommendations, search | Feed impressions driven by the card's title and cover image |
-| Monetization | Paid subscriptions, paywall inside a post | Creator payouts / subscriptions on X (verify) |
+| Monetization | Paid subscriptions, paywall inside a post | Creator Subscriptions (subscriber-only Articles) and X's creator revenue program, for eligible accounts |
 
 ## Substack
 

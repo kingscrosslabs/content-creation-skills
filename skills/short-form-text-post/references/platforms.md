@@ -1,23 +1,23 @@
 # Platform notes: X, Substack Notes, Threads
 
-Short on purpose. Platforms change limits often; anything marked (verify) should be checked against the platform's current help docs before you rely on it.
+Short on purpose. Checked against official help docs, November 2026. Platforms change these often.
 
 ## Quick comparison
 
 | | X | Substack Notes | Threads |
 |---|---|---|---|
-| Limit per post | 280 weighted characters on standard accounts | No tight limit; treat ~300–700 characters as the practical sweet spot (verify) | 500 characters |
-| Longer option | Paid accounts can post much longer text (about 25,000 characters) but the feed truncates it behind "Show more" (verify) | Write a full post instead (`newsletter-post`) | Text attachment for longer passages (verify) |
+| Limit per post | 280 weighted characters on standard accounts | No published limit; ~300–700 characters is a common practical range | 500 characters |
+| Longer option | Paid accounts can post much longer text (about 25,000 characters) but the feed truncates it behind "Show more" | Write a full post instead (`newsletter-post`) | Text attachment for longer passages (up to 10,000 characters) |
 | Multi-part | Thread of replies | Not a norm; keep it one note | Thread of replies |
-| Links | Count as 23 characters whatever their length | Links to Substack posts render as cards | Count toward the 500; link previews show (verify) |
-| Formatting | Plain text only | Bold and italics available (verify) | Plain text only |
-| Tags | Hashtags rarely help; skip unless the user uses them | None | One topic tag per post (verify) |
+| Links | Count as 23 characters whatever their length | Links to Substack posts render as cards | Count toward the 500; the first link shows a preview card; max 5 links |
+| Formatting | Plain text only | Bold, italics and other formatting available | Plain text only |
+| Tags | Hashtags rarely help; skip unless the user uses them | None | One topic tag per post |
 
 ## X
 
 - **Weighted counting.** Most Latin characters count 1. Each emoji counts 2. Each URL counts 23. CJK characters count 2. Line breaks count 1. When verifying with a script, add these adjustments to the raw `len()`.
 - **Post 1 is everything.** Most readers see only the first post of a thread. It must make sense and earn a click on its own.
-- **Norms.** Short, declarative, opinionated. Threads of 2–5 posts outperform long ones for most accounts. Links in the first post may get less reach than links placed in a later post or reply (verify; widely reported, not officially documented).
+- **Norms.** Short, declarative, opinionated. Threads of 2–5 posts outperform long ones for most accounts. Creators commonly report that links in the first post get less reach than links placed in a later post or reply; X doesn't document this.
 - Don't number posts ("1/") or add "🧵" unless the user wants it.
 
 ## Substack Notes

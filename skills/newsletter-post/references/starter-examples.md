@@ -28,8 +28,8 @@ Link: https://mikareyes.substack.com/p/how-ai-took-me-to-23k-on-instagram
 
 ## Example 2: problem → solution → build guide
 
-**"How I Turned Nearly 6 Years of Notes Into an AI Second Brain"** by Mika Reyes (@its.mikareyes)
-Link: Mika Reyes's Substack (URL: verify)
+**"How I Turned 6 Years of Stale Notes Into an AI Second Brain"** by Mika Reyes (@its.mikareyes)
+Link: https://mikareyes.substack.com/p/how-i-turned-6-years-of-stale-notes
 
 **Progression:** a specific personal artifact (a notes database kept for years and never reread) → the shift that made it useful → "you probably have your own version" turn to the reader → the thesis in one bolded line → **"Here's what I share in this post"** roadmap → the problem → the solution and its benefits → how to build yours, as numbered steps with a starter-file list and a ready-to-use prompt → before/after examples from the author's own use → upgrades for advanced readers → a closing analogy.
 
