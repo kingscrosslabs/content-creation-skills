@@ -76,21 +76,19 @@ Every hook uses one technique. Use no technique more than twice across the 10. T
 9. **Shame-to-Strength Flip.** Admit a past embarrassment the post will reframe as the right call.
 10. **Public Reversal.** Admit being wrong about a strong take you held.
 11. **PSA Norm-Breaker.** Announce a decision that breaks a norm in the user's space.
-12. **Loaded Quote.** Open on something a gatekeeper said; the remark does the work.
 
 **Authority-earned** (when proof serves the reader)
 
-13. **Authority Flex.** "I did [X]", where the constraint or result is the lesson.
-14. **Specific Number + Unexpected Context.** A number creates intrigue; the context surprises.
-15. **Insider Confession.** A non-obvious truth only someone in the arena would know.
-16. **Credible Broker.** "I asked [N] people about [Y]"; the research is the hook.
-17. **Unlikely Source.** An unexpected person or situation taught the lesson.
-18. **Borrowed Authority.** A credible outside source backs a claim that sounds wrong.
+12. **Authority Flex.** "I did [X]", where the constraint or result is the lesson.
+13. **Specific Number + Unexpected Context.** A number creates intrigue; the context surprises.
+14. **Insider Confession.** A non-obvious truth only someone in the arena would know.
+15. **Credible Broker.** "I asked [N] people about [Y]"; the research is the hook.
+16. **Unlikely Source.** An unexpected person or situation taught the lesson.
 
 **Situational**
 
-19. **Process Metaphor.** Frame a professional process as something familiar (dating, a diet, a renovation), with numbers.
-20. **Ranked Decisions.** Rank a personal decision next to a professional one.
+17. **Process Metaphor.** Frame a professional process as something familiar (dating, a diet, a renovation), with numbers.
+18. **Ranked Decisions.** Rank a personal decision next to a professional one.
 
 ### Rules for the set of 10
 

@@ -72,11 +72,6 @@ Each technique has a template and an illustrative hook. The `Promises:` line is 
 - "PSA: I stopped offering a free tier eight months ago, and my support tickets dropped by 70% while revenue went up. Here's how to decide whether yours should go too."
 - Promises: the decision rule for killing a free tier.
 
-**Loaded Quote**
-- Template: `When I was [high-stakes moment], [gatekeeper] told me: "[loaded remark]."` Follow with a second sentence that names the takeaway.
-- "When I showed my first model to an investor, he told me: "This is the most optimistic spreadsheet I've seen this year." He was right, and the three assumptions he circled are the ones I now check in every model I touch."
-- Promises: the three assumptions to stress-test.
-
 ### Authority-earned
 
 **Authority Flex**
@@ -103,12 +98,6 @@ Each technique has a template and an illustrative hook. The `Promises:` line is 
 - Template: `[Unexpected person] taught me [lesson] about [topic], and [proof].`
 - "My dentist taught me more about SaaS retention than any growth course, because his reminder system keeps 84% of patients coming back and I copied it almost step for step."
 - Promises: the reminder system, step by step.
-
-**Borrowed Authority**
-- Template: `[Claim that sounds wrong], according to [credible source]. [What it means for the reader].`
-- "Most startups that fail had money in the bank the month they decided to shut down, according to [credible source]. They ran out of time to fix one metric, and here's how to spot it six months early."
-- Note: the source must be real and checkable. Leave a `[placeholder]` until the user supplies it.
-- Promises: the early-warning metric.
 
 ### Situational
 

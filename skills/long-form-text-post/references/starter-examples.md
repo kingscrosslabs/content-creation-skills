@@ -21,7 +21,6 @@ Each structure is a sequence of beats. Pick one in the content-flow step when it
 - **Decision Rule.** A common dilemma → the rule ("if X, do Y; if not, don't") → 2–3 cases showing the rule applied → the rule restated as the takeaway.
 - **The Uncomfortable List → Fixes.** A framing line → a list of specific frustrations a narrow group shares → the fix for each. The fixes are the payload; without them it's a vent.
 - **Public Reversal → What I'd Do Now.** The take the user used to hold → what proved it wrong → the updated rule or steps.
-- **Loaded Quote → Universalize → Playbook.** A gatekeeper's loaded remark → why it's bigger than the user → the concrete steps the reader can take about it.
 
 ## Example 1: Numbered Playbook (LinkedIn)
 

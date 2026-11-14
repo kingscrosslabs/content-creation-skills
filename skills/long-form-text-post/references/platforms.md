@@ -13,19 +13,12 @@ The method is the same on both: one payload, built to be saved, 250–400 words.
 
 ## Long X posts
 
-- **Length limit.** 280 characters for standard accounts. Paid (Premium) accounts can post up to 25,000 characters. Without a paid account, a long post has to become a thread (see below).
+- **Length limit.** 280 characters for standard accounts. Paid (Premium) accounts can post up to 25,000 characters. Without a paid account, post the long version on LinkedIn only.
 - **The fold.** The timeline cuts long posts with "Show more", commonly reported at around the first 280 characters. The hook and its proof have to sit above that cut.
 - **Formatting.** Paid accounts can use bold and italics in long posts. Default to plain text anyway so the same draft works on LinkedIn; add emphasis only if the user asks.
 - **Links.** Creators commonly report that posts with external links get less reach. Put the link in a reply to the post if reach matters more than clicks.
 - **What it rewards.** Creators commonly report that replies, reposts and bookmarks, especially in the first hour, drive reach. Bookmarks map directly to the save score.
 - **Tone.** Blunter and faster than LinkedIn. Cut warm-up sentences, and keep the setup to two lines or fewer.
-
-## If the user has no paid X account: thread it
-
-Split the post into a thread instead of cutting it:
-- Post 1 is the hook, with its claim and proof, under 280 characters.
-- Each payload step becomes its own post, numbered, so each one can be read (and screenshotted) alone.
-- The takeaway gets its own post. The CTA and link go in the last post.
 
 ## Posting the same piece on both
 
