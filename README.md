@@ -57,7 +57,7 @@ content-publish       → content-wins      → content/winners/<bucket>/
 **Short-form video (Instagram Reels, TikTok, YouTube Shorts)**
 - ✅ [`short-form-video-hook`](skills/short-form-video-hook/): 10 opening-line options for one topic, as a tutorial (how-to) or an authority take (borrowed credibility plus a contrarian claim).
 - ✅ [`short-form-video-script`](skills/short-form-video-script/): a full talking-head script, under 60 seconds, from the hook you chose.
-- 🔜 `short-form-video-caption`: the caption under the video, with a keyword-rich first line, the value and a CTA.
+- ✅ [`short-form-video-caption`](skills/short-form-video-caption/): the caption under the video, with a keyword-rich first line, the value and a CTA.
 
 **Short-form text (X, Substack Notes, Threads)**
 - ✅ [`short-form-text-post`](skills/short-form-text-post/): a short post from a raw idea. You pick from three drafts, then get a version for each platform.
@@ -76,7 +76,7 @@ content-publish       → content-wins      → content/winners/<bucket>/
 - 🔜 `visual-infographic`: an animated infographic (system map, timeline, before/after, steps).
 
 **Plan, ship and learn**
-- 🔜 `content-setup`: builds your `content/` folder by interviewing you, linking files you already have, or drafting from your past posts.
+- ✅ [`content-setup`](skills/content-setup/): builds your `content/` folder by interviewing you, linking files you already have, or drafting from your past posts.
 - 🔜 `content-ideas`: finds post ideas in your recent notes and work, sorted by bucket.
 - 🔜 `content-planning`: turns ideas into a two-week calendar with the right format mix and posting cadence.
 - 🔜 `content-publish`: posts or schedules approved content through [Adeli](https://tryadeli.com). It asks before every post.
@@ -92,7 +92,7 @@ You can install all of the skills or pick some. Or clone the repo and copy the s
 
 ## Set up your content context
 
-Every skill starts by reading your `content/` folder. Until `content-setup` ships, create it by hand:
+Every skill starts by reading your `content/` folder. Run `content-setup` to build it: it interviews you (about 15 minutes), links docs you already have, or drafts from your past posts through Adeli. Or create it by hand from the [templates](skills/content-setup/templates/content/):
 
 ```
 content/
