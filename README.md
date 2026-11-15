@@ -61,7 +61,7 @@ content-publish       → content-wins      → content/winners/<bucket>/
 
 **Short-form text (X, Substack Notes, Threads)**
 - ✅ [`short-form-text-post`](skills/short-form-text-post/): a short post from a raw idea. You pick from three drafts, then get a version for each platform.
-- 🔜 `short-form-text-from-newsletter`: turns one newsletter issue into a batch of short posts that link back to it.
+- ✅ [`short-form-text-from-newsletter`](skills/short-form-text-from-newsletter/): turns one newsletter issue into a batch of short posts that link back to it.
 
 **Long-form text (LinkedIn, long X posts)**
 - ✅ [`long-form-text-hook`](skills/long-form-text-hook/): 10 opening lines built for the feed, in full sentences with credibility up front.
@@ -69,16 +69,16 @@ content-publish       → content-wins      → content/winners/<bucket>/
 
 **Newsletter (Substack, X Articles)**
 - ✅ [`newsletter-post`](skills/newsletter-post/): takes an idea or voice notes through a brainstorm, an outline and a 1,000–1,500-word draft, with your approval at each step.
-- 🔜 `newsletter-format`: final formatting with no rewriting: title and subtitle options, buttons, links and a footer.
+- ✅ [`newsletter-format`](skills/newsletter-format/): final formatting with no rewriting: title and subtitle options, buttons, links and a footer.
 
 **Visual (Instagram and LinkedIn feed)**
-- 🔜 `visual-carousel`: the slide-by-slide text for a swipeable carousel.
+- ✅ [`visual-carousel`](skills/visual-carousel/): the slide-by-slide text for a swipeable carousel.
 - 🔜 `visual-infographic`: an animated infographic (system map, timeline, before/after, steps).
 
 **Plan, ship and learn**
 - ✅ [`content-setup`](skills/content-setup/): builds your `content/` folder by interviewing you, linking files you already have, or drafting from your past posts.
-- 🔜 `content-ideas`: finds post ideas in your recent notes and work, sorted by bucket.
-- 🔜 `content-planning`: turns ideas into a two-week calendar with the right format mix and posting cadence.
+- ✅ [`content-ideas`](skills/content-ideas/): finds post ideas in your recent notes and work, sorted by bucket.
+- ✅ [`content-planning`](skills/content-planning/): turns ideas into a two-week calendar with the right format mix and posting cadence.
 - ✅ [`content-publish`](skills/content-publish/): posts or schedules approved content through [Adeli](https://tryadeli.com). It asks before every post.
 - ✅ [`content-wins`](skills/content-wins/): pulls your post stats through Adeli, picks the winners, and files each one in `content/winners/<bucket>/`.
 
