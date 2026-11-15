@@ -79,8 +79,8 @@ content-publish       → content-wins      → content/winners/<bucket>/
 - ✅ [`content-setup`](skills/content-setup/): builds your `content/` folder by interviewing you, linking files you already have, or drafting from your past posts.
 - 🔜 `content-ideas`: finds post ideas in your recent notes and work, sorted by bucket.
 - 🔜 `content-planning`: turns ideas into a two-week calendar with the right format mix and posting cadence.
-- 🔜 `content-publish`: posts or schedules approved content through [Adeli](https://tryadeli.com). It asks before every post.
-- 🔜 `content-wins`: pulls your post stats through Adeli, picks the winners, and files each one in `content/winners/<bucket>/`.
+- ✅ [`content-publish`](skills/content-publish/): posts or schedules approved content through [Adeli](https://tryadeli.com). It asks before every post.
+- ✅ [`content-wins`](skills/content-wins/): pulls your post stats through Adeli, picks the winners, and files each one in `content/winners/<bucket>/`.
 
 ## Install
 
