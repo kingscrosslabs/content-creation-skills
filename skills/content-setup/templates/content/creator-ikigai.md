@@ -57,6 +57,17 @@ Your content lives where these four overlap. If one circle is empty, the content
 |---|---|---|
 | | | |
 
+## CTAs, handles and logistics
+
+<!-- The practical details skills drop into every piece. Leave a line blank if it doesn't apply yet; a skill will ask instead of guessing. -->
+
+- **Handles:** <!-- per platform -->
+- **Follow line:** <!-- the exact sentence you end on when there's nothing to send. Example (fictional): "Follow for ten-minute fixes for desk backs." -->
+- **Comment keyword:** <!-- one word people comment to get something from you, and what you send them. Write "none yet" if you have nothing to send; skills use the follow line instead. -->
+- **Newsletter:** <!-- name and URL, if you have one -->
+- **Accounts you're happy to tag:** <!-- tools, partners, people. Skills tag no one who isn't listed here. -->
+- **Timezone and posting days:** <!-- e.g. America/Chicago, Tue/Thu/Sat. Add a format mix or a making day if you have one. -->
+
 ## Proof you can cite
 
 <!-- Real numbers, credentials and outcomes you're happy to put in a hook or a post. Skills use only what's listed here, and ask you for anything else. Leave out anything you wouldn't say in public. -->
@@ -82,7 +93,7 @@ Your content lives where these four overlap. If one circle is empty, the content
 
 ## Guardrails
 
-<!-- What you never do in content. Topics that are off-limits, things you'd never claim, people or companies you won't name, private details (family, money, health, clients) that stay private. -->
+<!-- What you never do in content. Topics that are off-limits, things you'd never claim, people or companies you won't name, private details (family, money, health, clients) that stay private, and how you label sponsored content. -->
 
 - 
 

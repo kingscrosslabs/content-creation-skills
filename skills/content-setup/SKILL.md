@@ -46,7 +46,7 @@ Before asking anything, look for an existing context folder.
 
 Ask one question with three options. Recommend based on what the user mentioned, if anything.
 
-1. **Nothing written down yet → interview.** About 15 minutes of questions in short rounds, then the files are drafted from the answers.
+1. **Nothing written down yet → interview.** About 25 minutes of questions in short rounds, then the files are drafted from the answers.
 2. **I already have docs → link them.** A brand doc, voice guide, wiki or Notion page, positioning file, or another tool's marketing context. The README points at them where they live; only what's missing gets created.
 3. **I've posted a lot → draft from my posts.** Uses Adeli to read recent posts and stats, drafts the voice section from real posts, and proposes the first winners. Optional, and needs Adeli connected.
 
@@ -54,7 +54,7 @@ Paths combine. The usual mix: link what exists or pull posts first, then intervi
 
 ## Step 3a: Interview
 
-Run the rounds in `references/interview.md`: two or three questions at a time, waiting for answers between rounds. Skip anything already answered. After round 5 there's enough to draft the three minimum files; offer to write those and finish the rest later if the user is short on time.
+Run the rounds in `references/interview.md`: two or three questions at a time, waiting for answers between rounds. Skip anything already answered. After round 9 there's enough to draft the three minimum files (round 6 can wait); offer to write those and finish the rest later if the user is short on time. Ask for at least one story before stopping (round 10, question 1): every script needs one.
 
 Rules:
 - Use the user's own words in the files. Their phrasing is their voice.

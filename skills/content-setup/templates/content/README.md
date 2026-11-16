@@ -26,7 +26,7 @@ These three are the minimum. A skill won't run in your voice without them.
 <!-- Add your own rows here: a research folder, a list of past newsletter issues, a lessons file. -->
 
 **Quick picks:**
-- **Hook or script:** the three "every piece" files, plus `winners/short-form-video/`.
+- **Hook or script:** the three "every piece" files, plus `winners/short-form-video/`. Scripts also open the story bank.
 - **LinkedIn post or newsletter:** the three "every piece" files, the story bank, plus that bucket's winners.
 - **Ideas or planning:** `creator-ikigai.md` (pillars and metrics) and every bucket's winners index.
 

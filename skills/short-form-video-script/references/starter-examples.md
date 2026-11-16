@@ -12,7 +12,7 @@ Two parts:
 Short-form platforms reward full watch-through. Reveal the thing the viewer is curious about in the middle or at the end, not in the hook. Best for direct-to-camera videos whose hook is a surprising or counterintuitive claim.
 
 1. **Hook**: a bold curiosity-gap statement ("This company is paying this job MORE than product managers").
-2. **Tease**: tell them to stay ("stick around, I'll tell you which one at the end"). It creates a contract.
+2. **Tease** (TUTORIAL only; AUTHORITY scripts skip it): tell them to stay ("stick around, I'll tell you which one at the end"). It creates a contract.
 3. **Build**: useful context, story or support. Don't reveal yet.
 4. **Payoff**: answer the hook at or near the end.
 

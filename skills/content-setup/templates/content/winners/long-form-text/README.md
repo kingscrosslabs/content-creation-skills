@@ -6,4 +6,5 @@ One line per winner, newest first. Skills read this index, then open the 3–5 w
 
 | Posted | File | Platform | Hook | Top stat | Why it won |
 |---|---|---|---|---|---|
-| <!-- 2026-01-15 --> | <!-- 2026-01-15-short-slug.md --> | <!-- linkedin --> | <!-- the opening line, shortened --> | <!-- e.g. 2.1k saves --> | <!-- one line --> |
+
+_No winners yet._

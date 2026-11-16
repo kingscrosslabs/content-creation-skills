@@ -13,8 +13,8 @@ Before writing anything, load the user's content context.
 
 1. **Find the folder.** Check the project's CLAUDE.md or AGENTS.md for a line starting `Content context:` and use that path. Otherwise use `content/` in the current project if `content/README.md` exists.
 2. **Read the index.** Open `content/README.md` and read the files it lists for every piece (at minimum `creator-ikigai.md`, `pov.md` and `persona.md`). Open optional files, like the story bank, only when this task needs them.
-3. **Read the winners you already have.** Open `content/winners/README.md`, `content/winners/_template.md` and every bucket's `README.md`. Note each winner's URL so nothing gets filed twice, and the "Last content-wins run" line if there is one. If a bucket folder or its `README.md` is missing, create it from the `content-setup` templates and say so.
-4. **No context folder?** Stop and offer three choices: run `content-setup` (recommended, about 15 minutes); answer three quick questions (who it's for, what you're known for, one belief you hold that most people in your space don't) and get output labeled as generic; or point to where the context lives.
+3. **Read the winners you already have.** Open `content/winners/README.md`, `content/winners/_template.md` and every bucket's `README.md`. Note each winner's URL so nothing gets filed twice, and the "Last content-wins run" line if there is one. If a bucket folder or its `README.md` is missing, create it from `../content-setup/templates/content/winners/` (the `content-setup` skill's templates) and say so.
+4. **No context folder?** Stop and offer three choices: run `content-setup` (recommended, about 25 minutes); answer three quick questions (who it's for, what you're known for, one belief you hold that most people in your space don't) and get output labeled as generic; or point to where the context lives.
 
 Never invent facts about the user. If a draft needs a story, number or credential that isn't in the context, ask for it or leave a clearly marked `[placeholder]`.
 
@@ -74,7 +74,7 @@ If a post could fit two buckets, file it where its format did the work, as `cont
 Judge every post against the user's own account, the same way `content-setup` does.
 
 1. **Group by account and format.** Instagram Reels and Instagram carousels are separate groups. A TikTok and a Reel are never compared, and neither are metrics from different platforms.
-2. **Pick the metric.** Use "Metrics you care about" in `creator-ikigai.md`. If it's empty, ask. If the user doesn't know, use saves and shares first, then follows, then views, taking the first one the platform actually reports for that group.
+2. **Pick the metric.** Use "Metrics you care about" in `creator-ikigai.md`. If it's empty, ask. If the user doesn't know, use saves and shares first, then follows, then views, then comments and likes, taking the first one the platform actually reports for that group.
 3. **Find the usual number.** The median of that metric across the group's full recent list.
 4. **Skip thin groups.** With fewer than about five posts, there's no "usual" yet. Name the group and skip it.
 5. **Shortlist.** Candidates are posts in the window that clearly beat their group's median. Rank by how many times the median they reached. Leave out anything already filed. Show about five per bucket at most; fewer is fine, and none is a fine answer.
@@ -110,7 +110,7 @@ For each approved post:
    - **Script / Post:** ask the user for the script, or check their drafts if they keep them in the context folder. For text posts, the post text. For video with no script on file, ask or leave `[placeholder: script]`.
    - **Caption:** the caption as posted. Delete the section if the format has none.
 4. **Mark everything inferred.** Anything not taken word for word from the post, the log or the user gets `(inferred)` or a `[placeholder]`.
-5. **Index line.** Add a row to `content/winners/<bucket>/README.md`, newest first, in its columns: Posted, File, Platform, Hook (shortened), Top stat (for example `312 comments (usual 41)`), Why it won (one line). Remove the template's example comment row the first time.
+5. **Index line.** Add a row to `content/winners/<bucket>/README.md`, newest first, in its columns: Posted, File, Platform, Hook (shortened), Top stat (for example `312 comments (usual 41)`), Why it won (one line). Remove the `_No winners yet._` line the first time.
 6. **Last run.** At the end of `content/winners/README.md`, add or update one line: `Last content-wins run: YYYY-MM-DD (posts through YYYY-MM-DD)`. Show the change before writing it.
 
 Show each new file in full before writing it if the user asked to review files; otherwise write the approved batch and list the paths.
@@ -121,7 +121,7 @@ For when Adeli isn't connected, or for a post Adeli can't see (a LinkedIn person
 
 1. Ask for: the URL, the date, the platform and format, the post text or script, the stats the user has, and their usual number for the same metric on that account and format.
 2. If they don't know their usual number, file it on their judgment and write "Usual: unknown" in the Why it won section.
-3. Sort it into a bucket (Step 5), draft the "why it won" guess, get approval, then file it as in Step 8.
+3. Sort it into a bucket (Step 5), draft the "why it won" guess, get approval, then file it as in Step 8. Skip the "Last run" line (Step 8, item 6): it tracks Adeli pulls only, and updating it would make the next Adeli run skip older posts.
 
 ## Step 10: Patterns (optional)
 

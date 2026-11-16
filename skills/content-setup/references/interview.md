@@ -1,6 +1,6 @@
 # Interview question bank
 
-Used by the interview path in `content-setup`. About 15 minutes in total.
+Used by the interview path in `content-setup`. About 25 minutes in total: nine core rounds and one optional round.
 
 ## How to run it
 
@@ -9,7 +9,7 @@ Used by the interview path in `content-setup`. About 15 minutes in total.
 - **Follow up once on vague answers.** "I help people grow" gets one nudge: "Grow what, for whom? Give me one real example." Then move on; a gap can be filled later.
 - **Use their words.** Write their phrasing into the files, not a polished paraphrase. Their phrasing is their voice.
 - **Optional rounds are optional.** Offer them; don't push.
-- **Let them stop early.** After round 5 there's enough for the three minimum files. Offer to write those and come back for the rest.
+- **Let them stop early.** After round 9 there's enough for the three minimum files; round 6 can wait. Ask for at least one story first (round 10, question 1), because every script needs one. Offer to write the files and come back for the rest.
 - **Never fill a gap with a guess.** If an answer is missing, leave the guidance comment in the file and list it under "Still to fill".
 
 Each round says which file and section its answers feed.
@@ -44,7 +44,7 @@ After this round, draft the core POV in one sentence and read it back. Ask: "Wou
 
 ## Round 5: The one reader → `persona.md`
 
-1. Think of one real person you'd most love to help with your content. Without naming them, describe them: their job, their situation, what they've already tried.
+1. Think of one real person you'd most love to help with your content. Describe them: their job, their situation, what they've already tried. Give them a made-up first name, not their real one.
 2. What are they stuck on, and what do they want instead? Use the words they'd use.
 3. What would they type into a search bar at the end of a bad day?
 
@@ -70,7 +70,15 @@ From their samples, draft the Voice section yourself: sentence length, how they 
 2. Anything you'd never claim, promise or sell?
 3. When a post works, which number tells you? Rank your top three. (Saves, shares, follows, comments, leads, subscribers, sales.)
 
-## Round 9 (optional): Stories → `story-bank/mine/`
+## Round 9: CTAs and logistics → `creator-ikigai.md` (CTAs, handles and logistics)
+
+1. What are your handles, and what's the one sentence you'd end a video on to ask for a follow?
+2. Do you have something to send people (a guide, a checklist, a template) and one word they'd comment to get it? "Not yet" is a fine answer.
+3. What timezone do you post in, on which days? Which accounts (tools, partners, people) are you happy to tag?
+
+## Round 10: Stories → `story-bank/mine/`
+
+Question 1 is core: scripts and posts need a real moment, and skills can't invent one. Questions 2 and 3 are optional.
 
 1. Tell me one moment that changed how you think about your topic. Where were you, and what was said?
 2. A time you got it wrong, and what you do differently now?
@@ -78,7 +86,7 @@ From their samples, draft the Voice section yourself: sentence length, how they 
 
 Write one story file per story from `story-bank/_template.md`, plus an index row. Keep the specifics; don't tidy them into a lesson.
 
-## Round 10 (optional): Sub-POVs → `pov.md` (Sub-POVs)
+## Round 11 (optional): Sub-POVs → `pov.md` (Sub-POVs)
 
 1. What are two or three smaller things you believe that most people in your space get wrong?
 2. For each: what do people usually think instead, and what's your proof?
@@ -89,10 +97,10 @@ Write one story file per story from `story-bank/_template.md`, plus an index row
 
 | File | Minimum to write it | Rounds |
 |---|---|---|
-| `creator-ikigai.md` | Snapshot, at least two pillars, a Voice section, Guardrails | 1, 2, 3, 7, 8 |
-| `pov.md` | A one-sentence core POV with the three beats | 4 (10 optional) |
+| `creator-ikigai.md` | Snapshot, at least two pillars, a Voice section, Guardrails | 1, 2, 3, 7, 8, 9 |
+| `pov.md` | A one-sentence core POV with the three beats | 4 (11 optional) |
 | `persona.md` | Snapshot, what they want, what they're stuck on, three questions they ask | 5, 6 |
-| `story-bank/` | Only if they told a story | 9 |
+| `story-bank/` | At least one story | 10 |
 | `README.md` | Always; written last | none |
 
 If a file can't meet its minimum, write what you have, keep the guidance comments in the empty sections, and list it under "Still to fill" at the end.

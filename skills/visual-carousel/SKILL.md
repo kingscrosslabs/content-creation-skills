@@ -14,7 +14,7 @@ Before writing anything, load the user's content context.
 1. **Find the folder.** Check the project's CLAUDE.md or AGENTS.md for a line starting `Content context:` and use that path. Otherwise use `content/` in the current project if `content/README.md` exists.
 2. **Read the index.** Open `content/README.md` and read the files it lists for every piece (at minimum `creator-ikigai.md`, `pov.md` and `persona.md`). Open optional files, like the story bank, only when this task needs them.
 3. **Read this bucket's winners.** Open `content/winners/visual/README.md`, then the 3–5 winners closest to this topic. Copy their patterns, never their words. If there are none yet, use `references/starter-examples.md`.
-4. **No context folder?** Stop and offer three choices: run `content-setup` (recommended, about 15 minutes); answer three quick questions (who it's for, what you're known for, one belief you hold that most people in your space don't) and get output labeled as generic; or point to where the context lives.
+4. **No context folder?** Stop and offer three choices: run `content-setup` (recommended, about 25 minutes); answer three quick questions (who it's for, what you're known for, one belief you hold that most people in your space don't) and get output labeled as generic; or point to where the context lives.
 
 Never invent facts about the user. If a draft needs a story, number or credential that isn't in the context, ask for it or leave a clearly marked `[placeholder]`.
 
@@ -191,7 +191,6 @@ If no topic was given, ask what the carousel is about before doing anything else
 - `short-form-video-caption`: writes the Instagram caption from the approved slides.
 - `short-form-video-hook`: hook options when the same idea becomes a video.
 - `long-form-text-post`: when the idea works better as a LinkedIn text post.
-- `visual-infographic`: when the idea is one diagram, not a sequence of slides.
 - `content-ideas`: finds topics worth turning into a carousel.
 - `content-planning`: places the carousel on the calendar.
 - `content-publish`: posts or schedules the approved carousel.

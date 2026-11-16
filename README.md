@@ -92,7 +92,7 @@ You can install all of the skills or pick some. Or clone the repo and copy the s
 
 ## Set up your content context
 
-Every skill starts by reading your `content/` folder. Run `content-setup` to build it: it interviews you (about 15 minutes), links docs you already have, or drafts from your past posts through Adeli. Or create it by hand from the [templates](skills/content-setup/templates/content/):
+Every skill starts by reading your `content/` folder. Run `content-setup` to build it: it interviews you (about 25 minutes), links docs you already have, or drafts from your past posts through Adeli. Or create it by hand from the [templates](skills/content-setup/templates/content/):
 
 ```
 content/
