@@ -48,6 +48,7 @@ long-form-text-hook   → long-form-text-post
 newsletter-post       → newsletter-format → short-form-text-from-newsletter
 content-ideas         → content-planning  → any bucket's skills
 content-publish       → content-wins      → content/winners/<bucket>/
+content-publish       → dm-automation     (comment a keyword, get the guide)
 ```
 
 ## Skills
@@ -81,6 +82,7 @@ content-publish       → content-wins      → content/winners/<bucket>/
 - ✅ [`content-planning`](skills/content-planning/): turns ideas into a two-week calendar with the right format mix and posting cadence.
 - ✅ [`content-publish`](skills/content-publish/): posts or schedules approved content through [Adeli](https://tryadeli.com). It asks before every post.
 - ✅ [`content-wins`](skills/content-wins/): pulls your post stats through Adeli, picks the winners, and files each one in `content/winners/<bucket>/`.
+- ✅ [`dm-automation`](skills/dm-automation/): sets up an Instagram comment-to-DM or story-reply automation through [LedaChat](https://ledachat.com). People comment a keyword, follow, leave their email and get your guide's link. Your default DM copy is saved once in `content/dm-automation.md`; after that, each automation needs only the post, the guide and the link.
 
 ## Install
 
@@ -101,6 +103,7 @@ content/
 ├── pov.md                 # your core point of view and the beliefs under it
 ├── persona.md             # the one reader you write for
 ├── story-bank/            # optional: your stories, and ones you borrow with credit
+├── dm-automation.md       # optional: your DM copy, toggles and log (written by dm-automation)
 └── winners/               # your best posts, one file per post
     ├── short-form-video/
     ├── short-form-text/
