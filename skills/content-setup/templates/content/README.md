@@ -22,6 +22,7 @@ These three are the minimum. A skill won't run in your voice without them.
 |---|---|---|
 | `story-bank/README.md` | Index of your stories (`mine/`) and stories you borrow with credit (`borrowed/`) | A piece needs an anecdote. Never invent one |
 | `winners/<bucket>/README.md` | One line per post that did well, newest first | Writing in that bucket. Open the index, then the 3–5 closest winners |
+| `dm-automation.md` | Your default DM automation copy, toggles and a log of every automation | Setting up a comment-to-DM automation. Written by `dm-automation` on its first run |
 
 <!-- Add your own rows here: a research folder, a list of past newsletter issues, a lessons file. -->
 
