@@ -1,0 +1,92 @@
+---
+import { site, type Status } from "../data/site";
+import { nowrapHyphens } from "../lib/text";
+const label: Record<Status, string> = {
+  available: "Available",
+  building: "In progress",
+  soon: "Coming soon",
+};
+---
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 set:html={nowrapHyphens(site.skillsSection.heading)} />
+      <p>{site.skillsSection.sub}</p>
+    </div>
+
+    {site.groups.map((g) => (
+      <div class="group">
+        <h3 class="group-name">{g.name}</h3>
+        <ul class="cards">
+          {g.skills.map((s) => {
+            const linked = s.hasFolder !== false;
+            const Tag = linked ? "a" : "div";
+            return (
+              <li>
+                <Tag class:list={["card", linked && "linked"]} href={linked ? `${site.skillsPath}/${s.slug}` : undefined} rel={linked ? "noopener" : undefined}>
+                  <div class="top">
+                    <span class="name">{s.slug}</span>
+                    {linked && <span class="arrow" aria-hidden="true">→</span>}
+                  </div>
+                  <p class="blurb">{s.blurb}</p>
+                  <span class={`status ${s.status}`}>{label[s.status]}</span>
+                </Tag>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))}
+
+    <div class="more">
+      <a class="btn btn-primary" href={site.repo} rel="noopener"><span aria-hidden="true">★</span> Star on GitHub</a>
+      <p>Star the repo to follow along as new skills ship.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .group + .group { margin-top: 40px; }
+  .group-name {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  }
+  .card.linked:hover { transform: translateY(-2px); border-color: var(--line-strong); background: var(--surface-2); }
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .name { font-family: var(--font-mono); font-size: 16px; color: var(--text); word-break: break-word; }
+  .arrow { color: var(--muted); transition: color 0.2s, transform 0.2s; }
+  .card.linked:hover .arrow { color: var(--accent); transform: translateX(3px); }
+  .blurb { color: var(--muted); font-size: 16px; line-height: 1.5; flex: 1; }
+  .status { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .status.available { color: var(--status-available); }
+  .status.building { color: var(--status-building); }
+  .status.soon::before { background: transparent; border: 1px solid currentColor; }
+  .more { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; margin-top: 48px; }
+  .more p { color: var(--muted); font-size: 15px; }
+</style>
