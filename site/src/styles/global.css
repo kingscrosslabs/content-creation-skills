@@ -1,0 +1,152 @@
+/* Shared stylesheet for the skills sites. Identical in both repos:
+   change it in one, copy it to the other. Site colour lives in tokens.css. */
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+
+  --ink: #0c0b0a;
+  --surface: #151311;
+  --surface-2: #1d1a17;
+  --line: #2e2a26;
+  --line-strong: #4a443e;
+  --text: #f3ece4;
+  --muted: #a0968b;
+  --status-available: #6fd098;
+  --status-building: #facf5a;
+  --status-soon: #a0968b;
+
+  --font-display: "Satoshi", "Hanken Grotesk", system-ui, sans-serif;
+  --font-body: "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius: 5px;
+  --radius-pill: 100px;
+  --max: 1120px;
+  --gutter: 20px;
+  --section: clamp(64px, 10vw, 112px);
+}
+
+@media (min-width: 640px) {
+  :root { --gutter: 40px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-synthesis-weight: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(44px, 7vw, 84px); line-height: 1; letter-spacing: -0.034em; }
+h2 { font-size: clamp(32px, 4.4vw, 48px); line-height: 1.08; letter-spacing: -0.034em; }
+h3 { font-size: 22px; line-height: 1.25; letter-spacing: -0.03em; }
+p { margin: 0; text-wrap: pretty; }
+
+a { color: inherit; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.08em 0.36em;
+  white-space: nowrap;
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: calc(var(--max) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: var(--section) 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-head { max-width: 680px; margin-bottom: 48px; }
+.section-head p { color: var(--muted); font-size: clamp(18px, 2vw, 21px); line-height: 1.45; margin-top: 16px; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow::before { content: "✦"; color: var(--accent); letter-spacing: 0; }
+
+.accent { color: var(--accent); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-press); }
+.btn-secondary { border: 1px solid var(--line-strong); color: var(--text); }
+.btn-secondary:hover { border-color: var(--muted); }
+.btn-sm { min-height: 40px; padding: 0 18px; font-size: 15px; }
+
+.nw { white-space: nowrap; }

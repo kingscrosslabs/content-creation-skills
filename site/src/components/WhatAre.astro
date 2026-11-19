@@ -1,0 +1,46 @@
+---
+import Confetti from "./Confetti.astro";
+import { confetti } from "../data/confetti";
+import { site } from "../data/site";
+import { nowrapHyphens } from "../lib/text";
+---
+<section class="section" id="what">
+  <Confetti pieces={confetti.what} />
+  <div class="wrap grid">
+    <div>
+      <h2 set:html={nowrapHyphens(site.what.heading)} />
+      <div class="body">
+        {site.what.body.map((p) => <p set:html={p} />)}
+      </div>
+    </div>
+    <ol class="steps">
+      {site.what.steps.map((s, i) => (
+        <li>
+          <span class="num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+          <div>
+            <h3>{s.title}</h3>
+            <p set:html={s.body} />
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .grid { display: grid; gap: 48px; }
+  @media (min-width: 960px) { .grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+  .body { display: grid; gap: 18px; margin-top: 24px; color: var(--muted); font-size: 18px; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; align-content: start; }
+  .steps li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .num { font-family: var(--font-mono); font-size: 14px; color: var(--accent); padding-top: 3px; }
+  .steps p { color: var(--muted); margin-top: 6px; font-size: 16px; }
+</style>

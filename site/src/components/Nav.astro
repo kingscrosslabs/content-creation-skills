@@ -1,0 +1,46 @@
+---
+import { site } from "../data/site";
+import StarButton from "./StarButton.astro";
+---
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="mark" href="/" aria-label={`${site.name} home`}>
+      <span class="glyph" aria-hidden="true">✦</span>{site.wordmark}
+    </a>
+    <nav aria-label="Sections">
+      <a href="#skills">Skills</a>
+      <a href="#agents">Agents</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <StarButton size="sm" />
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgb(12 11 10 / 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; gap: 24px; height: 64px; }
+  .mark {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: auto;
+  }
+  .glyph { color: var(--accent); font-size: 18px; }
+  nav { display: none; gap: 28px; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 15px; transition: color 0.15s; }
+  nav a:hover { color: var(--text); }
+  @media (min-width: 760px) { nav { display: flex; } }
+  .mark { white-space: nowrap; }
+  @media (max-width: 440px) { .nav-inner > :global(.btn) { display: none; } }
+</style>

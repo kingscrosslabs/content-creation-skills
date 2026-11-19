@@ -1,0 +1,61 @@
+---
+interface Props { command: string }
+const { command } = Astro.props;
+---
+<div class="terminal">
+  <div class="bar" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="line">
+    <code class="cmd"><span class="prompt" aria-hidden="true">$</span>{command}</code>
+    <button class="copy" type="button" data-copy={command} aria-label="Copy install command">Copy</button>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("button[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy ?? "");
+        btn.textContent = "Copied";
+      } catch {
+        btn.textContent = "Select it";
+      }
+      setTimeout(() => (btn.textContent = "Copy"), 1600);
+    });
+  });
+</script>
+
+<style>
+  .terminal {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    max-width: 640px;
+  }
+  .bar { display: flex; gap: 7px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong); }
+  .line { display: flex; align-items: center; gap: 12px; padding: 16px 14px 16px 18px; }
+  .cmd {
+    all: unset;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .prompt { color: var(--accent); margin-right: 12px; user-select: none; }
+  .copy {
+    font: 500 13px var(--font-body);
+    color: var(--text);
+    background: var(--surface-2);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    padding: 6px 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .copy:hover { border-color: var(--muted); }
+  @media (max-width: 480px) { .cmd { font-size: 13px; white-space: normal; overflow-wrap: anywhere; line-height: 1.6; } }
+</style>

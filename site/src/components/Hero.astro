@@ -1,0 +1,30 @@
+---
+import { site } from "../data/site";
+import StarButton from "./StarButton.astro";
+import Terminal from "./Terminal.astro";
+import Confetti from "./Confetti.astro";
+import { confetti } from "../data/confetti";
+const skillCount = site.groups.reduce((n, g) => n + g.skills.length, 0);
+---
+<section class="hero">
+  <Confetti pieces={confetti.hero} />
+
+  <div class="wrap">
+    <p class="eyebrow">{site.hero.eyebrow}</p>
+    <h1>{site.hero.headline} <span class="accent">{site.hero.highlight}</span></h1>
+    <p class="sub">{site.hero.sub}</p>
+    <Terminal command={site.install} />
+    <div class="ctas">
+      <StarButton />
+      <a class="btn btn-secondary" href="#skills">See the {skillCount} skills <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero { position: relative; padding: clamp(64px, 11vw, 128px) 0 var(--section); overflow: hidden; }
+  h1 { margin: 20px 0 24px; max-width: 13ch; }
+  .sub { font-size: clamp(18px, 2vw, 21px); line-height: 1.45; color: var(--muted); max-width: 620px; margin-bottom: 36px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+</style>

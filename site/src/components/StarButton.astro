@@ -1,0 +1,8 @@
+---
+import { site } from "../data/site";
+interface Props { size?: "sm" | "md" }
+const { size = "md" } = Astro.props;
+---
+<a class:list={["btn", "btn-primary", size === "sm" && "btn-sm"]} href={site.repo} rel="noopener">
+  <span aria-hidden="true">★</span> Star on GitHub
+</a>
