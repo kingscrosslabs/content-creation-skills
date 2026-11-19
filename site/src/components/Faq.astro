@@ -1,7 +1,10 @@
 ---
+import Confetti from "./Confetti.astro";
+import { confetti } from "../data/confetti";
 import { site } from "../data/site";
 ---
 <section class="section" id="faq">
+  <Confetti pieces={confetti.faq} />
   <div class="wrap grid">
     <h2>FAQ</h2>
     <div class="list">

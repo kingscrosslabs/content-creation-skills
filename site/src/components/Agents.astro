@@ -1,14 +1,19 @@
 ---
+import Confetti from "./Confetti.astro";
+import { confetti } from "../data/confetti";
 import { site } from "../data/site";
+const logos = import.meta.glob<string>("../assets/agents/*.svg", { query: "?raw", import: "default", eager: true });
+const logo = (icon: string) => logos[`../assets/agents/${icon}.svg`] ?? "";
 ---
 <section class="section" id="agents">
+  <Confetti pieces={confetti.agents} />
   <div class="wrap">
     <div class="section-head">
       <h2>{site.agents.heading}</h2>
       <p>{site.agents.sub}</p>
     </div>
     <ul class="agents">
-      {site.agents.list.map((a) => <li>{a}</li>)}
+      {site.agents.list.map((a) => <li><span class="logo" set:html={logo(a.icon)} />{a.name}</li>)}
       <li class="any">Any agent that reads <code>SKILL.md</code></li>
     </ul>
     <p class="foot" set:html={site.agents.footnote} />
@@ -27,7 +32,8 @@ import { site } from "../data/site";
   .agents li {
     display: flex;
     align-items: center;
-    min-height: 64px;
+    gap: 12px;
+    min-height: 72px;
     padding: 0 20px;
     background: var(--surface);
     border: 1px solid var(--line);
@@ -37,6 +43,8 @@ import { site } from "../data/site";
     font-size: clamp(16px, 2vw, 18px);
     letter-spacing: -0.02em;
   }
+  .logo { display: inline-flex; width: 26px; height: 26px; flex-shrink: 0; color: var(--text); }
+  .logo :global(svg) { width: 100%; height: 100%; }
   .agents li.any { grid-column: span 2; }
   @media (max-width: 340px) { .agents li.any { grid-column: auto; } }
   .agents li.any { font-family: var(--font-body); font-size: 15px; color: var(--muted); letter-spacing: 0; border-style: dashed; }

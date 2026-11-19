@@ -94,12 +94,16 @@ code {
 }
 
 .wrap {
+  position: relative;
+  z-index: 1;
   max-width: calc(var(--max) + var(--gutter) * 2);
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
 
 .section {
+  position: relative;
+  overflow: hidden;
   padding: var(--section) 0;
   border-top: 1px solid var(--line);
 }

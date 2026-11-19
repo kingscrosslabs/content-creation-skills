@@ -197,9 +197,23 @@ scroll under it.
 5px on everything structural: cards, chips, terminal, FAQ rows. Pill radius
 (100px) is for buttons only. A rounded-xl card reads as a different system.
 
-Decoration is limited to a few outlined accent shapes (sparkle, ring, squiggle)
-in the hero gutters, `aria-hidden`, hidden below 960px so they never land on
-text, and still under `prefers-reduced-motion`.
+### Confetti
+
+Cut-paper shapes scattered through every section, borrowed from the
+mikareyes.com confetti layer: sparkle, ring, squiggle, zigzag, cross, triangle,
+dots, arc, disc, capsule. `Confetti.astro` draws them; `src/data/confetti.ts`
+places them. Four rules:
+
+1. **Decoration only.** `aria-hidden`, no pointer events, nothing depends on
+   them.
+2. **Two colours only.** Accent outline or fill, or `line-strong` for quieter
+   pieces. No new hues.
+3. **Never on text.** At 1440px and up they sit in the gutter outside the
+   content column. Below that, only pieces with a `narrow` position show, capped
+   at 28px and inside the section's top padding band, above the first line.
+4. **Always moving, never in sync.** Each piece has one motion (spin, bob,
+   sway, drift, pulse) with staggered durations and delays. All of it stops
+   under `prefers-reduced-motion`.
 
 ## Components
 
@@ -214,7 +228,9 @@ text, and still under `prefers-reduced-motion`.
 - **Skill card.** Surface ground, hairline border, mono skill name, one-sentence
   blurb, status badge. Hover moves the border to `line-strong` and lifts 2px.
   Cards link to the skill folder on GitHub until each skill has its own page.
-- **Agent tile.** Text-only tile with the agent name. No vendor logos.
+- **Agent tile.** Monochrome agent logo (26px, text colour) plus the agent
+  name. Logos are vendored from LobeHub icons (MIT) in `src/assets/agents/`,
+  single colour only, never the vendor's brand colours.
 - **FAQ row.** Native `<details>`, surface ground, `+` that rotates to `×`.
   Every question is also emitted as FAQPage JSON-LD.
 - **Eyebrow.** Uppercase Hanken 13px, muted, prefixed with a blue `✦`.
@@ -235,10 +251,11 @@ Icons are text glyphs only: `★ → ✦ + $`. No icon library.
 **Don't**
 
 - Don't put white text on blue.
-- Don't add a second accent colour, a gradient, a glow or a shadow.
+- Don't add a second accent colour, a gradient, a glow or a shadow. Confetti
+  uses the accent and `line-strong` only.
 - Don't use blue for body text or large fills.
 - Don't use pure black `#000` or a cool grey.
-- Don't add vendor logos to the agent grid without each vendor's brand
-  permission.
+- Don't show agent logos in colour, or use them anywhere except the agent
+  grid.
 - Don't let the two sister sites drift structurally. Accent and copy differ;
   the skeleton is shared.

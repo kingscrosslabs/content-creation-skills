@@ -36,7 +36,6 @@ export const site = {
     headline: "Content creation skills",
     highlight: "for AI agents",
     sub: "Skills that write hooks, scripts, posts and newsletters in your voice, for Instagram, TikTok, LinkedIn, X, Threads and Substack. They learn from your best posts. You approve every draft.",
-    note: "Publishing and post stats run through Adeli. Writing needs only your agent.",
   },
 
   what: {
@@ -189,14 +188,11 @@ export const site = {
     heading: "Works with your agent",
     sub: "The skills use the open Agent Skills format: plain folders with a SKILL.md file. Any agent that loads skills can run them.",
     list: [
-      "Claude Code",
-      "Codex",
-      "Cursor",
-      "GitHub Copilot",
-      "Gemini CLI",
-      "OpenCode",
-      "Windsurf",
-      "Cline",
+      { name: "Claude", icon: "claude" },
+      { name: "Codex", icon: "codex" },
+      { name: "Cursor", icon: "cursor" },
+      { name: "Gemini CLI", icon: "geminicli" },
+      { name: "GrokBot", icon: "grokbot" },
     ],
     footnote:
       "Not on the list? Clone the repo and copy the skill folders into your agent's skills folder. For Claude Code that's <code>.claude/skills/</code>.",
@@ -204,38 +200,48 @@ export const site = {
 
   faqs: [
     {
-      q: "What are content creation skills?",
-      a: "They are open-source skills for AI agents that write social and newsletter content in your voice. Each one teaches your agent one job, like writing hooks for a reel, a LinkedIn post or a newsletter issue, using what it knows about you and your best posts.",
+      q: "How do I use AI to write social media posts that sound like me?",
+      a: "Give the AI your voice before you ask for a post. These skills read a <code>content/</code> folder about you (how you talk, your topics, your reader and your best-performing posts) every time they write, so drafts start from your voice instead of a generic one. You still approve every draft.",
     },
     {
-      q: "Will the posts sound like me?",
-      a: "That's the point of the <code>content/</code> folder. Every skill reads your voice, pillars, reader and winning posts before it writes, and <code>content-wins</code> keeps adding your best performers so drafts get closer to you over time. You still approve every hook, outline and draft.",
+      q: "Can Claude write Instagram Reels and TikTok scripts?",
+      a: "Yes. <code>short-form-video-hook</code> gives you 10 opening lines for a topic, <code>short-form-video-script</code> turns the one you pick into a talking-head script under 60 seconds, and <code>short-form-video-caption</code> writes the caption. They run in Claude Code, Codex, Cursor and other agents that load skills.",
     },
     {
-      q: "Which platforms do they cover?",
-      a: "Instagram, TikTok, YouTube Shorts, LinkedIn, X, Threads, Substack and Substack Notes. Skills are grouped by format (short-form video, short-form text, long-form text, newsletter, visual) and each one knows the rules for its platforms.",
+      q: "How do I write a good hook for Reels or TikTok?",
+      a: "Lead with the payoff or a claim that cuts against what your viewer believes, in under two seconds. <code>short-form-video-hook</code> writes 10 options for one topic in two styles: a tutorial hook that promises a specific result, or an authority hook that pairs borrowed credibility with a contrarian take.",
     },
     {
-      q: "Which AI agents can use them?",
-      a: "Claude Code, Codex, Cursor and any agent that loads skills in the Agent Skills format (a folder with a <code>SKILL.md</code> file).",
+      q: "How do I turn a newsletter into social media posts?",
+      a: "Pull the strongest standalone ideas out of the issue and rewrite each as its own short post that links back. <code>short-form-text-from-newsletter</code> does this for X, Threads and Substack Notes from one newsletter issue.",
     },
     {
-      q: "How do I install them?",
-      a: "Run <code>npx skills add kingscrosslabs/content-creation-skills</code> and pick the skills you want. Or clone the repo and copy the skill folders into your agent's skills folder. Then run <code>content-setup</code>.",
+      q: "How do I find content ideas when I'm stuck?",
+      a: "Start from what you already did, said and saw this week, not a blank page. <code>content-ideas</code> reads your recent notes, drafts and saved links, scores each idea against your topics and reader, and sorts them by format. <code>content-planning</code> then turns them into a two-week calendar.",
     },
     {
-      q: "Do they post for me?",
-      a: "Only if you want them to, and only after you say yes. <code>content-publish</code> posts or schedules approved content through Adeli and asks before every post. The writing skills never publish anything.",
+      q: "How do I set up an Instagram comment-to-DM automation?",
+      a: "<code>dm-automation</code> sets one up through LedaChat: people comment a keyword on your post, get a DM, can be asked to follow and leave their email, then get your link. Write your default DM copy once and each new automation only needs the post and the link.",
     },
     {
-      q: "Do I have to tell my agent which skill to use?",
-      a: "No. Describe what you want and your agent picks the skill from its description. You can also name it, for example “use short-form-video-hook”.",
+      q: "What are agent skills?",
+      a: "Agent skills are folders with a <code>SKILL.md</code> file that teach an AI agent how to do one job. The agent reads each skill's short description and loads the full instructions only when a task needs them. Claude Code, Codex, Cursor and other agents support the format.",
     },
     {
-      q: "Are the skills free?",
+      q: "How do I install the content creation skills?",
+      a: "Run <code>npx skills add kingscrosslabs/content-creation-skills</code> and pick the skills you want, or copy the folders into your agent's skills folder (for Claude Code, <code>.claude/skills/</code>). Then run <code>content-setup</code> to build your content folder.",
+    },
+    {
+      q: "Can these skills schedule and publish my posts?",
+      a: "Yes, but only after you approve. <code>content-publish</code> posts or schedules content to Instagram, Facebook, TikTok, YouTube, LinkedIn, X and Bluesky through Adeli, and asks before every post. <code>content-wins</code> then pulls your stats so future drafts learn from what worked.",
+    },
+    {
+      q: "Are the content creation skills free?",
       a: "Yes. They're open source under the MIT licence. The publishing, stats and DM skills use Adeli and LedaChat, which both have free plans.",
     },
   ],
+
+  closing: "Turn your agent into a content creation expert with these skills.",
 
   sister: {
     name: "aeo-seo-skills",

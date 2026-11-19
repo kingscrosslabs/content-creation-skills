@@ -1,8 +1,11 @@
 ---
+import Confetti from "./Confetti.astro";
+import { confetti } from "../data/confetti";
 import { site } from "../data/site";
 import { nowrapHyphens } from "../lib/text";
 ---
 <section class="section" id="what">
+  <Confetti pieces={confetti.what} />
   <div class="wrap grid">
     <div>
       <h2 set:html={nowrapHyphens(site.what.heading)} />

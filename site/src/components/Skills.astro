@@ -1,4 +1,6 @@
 ---
+import Confetti from "./Confetti.astro";
+import { confetti } from "../data/confetti";
 import { site, type Status } from "../data/site";
 import { nowrapHyphens } from "../lib/text";
 const label: Record<Status, string> = {
@@ -8,6 +10,7 @@ const label: Record<Status, string> = {
 };
 ---
 <section class="section" id="skills">
+  <Confetti pieces={confetti.skills} />
   <div class="wrap">
     <div class="section-head">
       <h2 set:html={nowrapHyphens(site.skillsSection.heading)} />
