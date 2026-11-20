@@ -1,0 +1,87 @@
+{
+  "source": "sitemap",
+  "sitemap": "https://content-creation-skills.com/sitemap-index.xml",
+  "summary": {
+    "pages": 1,
+    "errors": 0,
+    "non_200": 0,
+    "redirected": 0,
+    "missing_description": 0,
+    "description_equals_title": 0,
+    "description_out_of_range": 1,
+    "duplicate_descriptions": 0,
+    "missing_canonical": 0,
+    "canonical_not_self": 0,
+    "og_url_not_canonical": 0,
+    "missing_og_image": 1,
+    "missing_og_description": 0,
+    "missing_twitter_card": 0,
+    "most_shared_og_image": null,
+    "pages_with_duplicate_tags": [],
+    "h1_not_one": 0,
+    "no_jsonld": 0,
+    "jsonld_parse_errors": 0,
+    "images_missing_alt": 0,
+    "thin_under_150_words": [],
+    "noindex": [],
+    "x_robots_tag": {},
+    "orphans": [
+      "https://content-creation-skills.com/"
+    ],
+    "dead_end_pages": [
+      "https://content-creation-skills.com/"
+    ],
+    "missing_lastmod": 1
+  },
+  "pages": [
+    {
+      "url": "https://content-creation-skills.com/",
+      "status": 200,
+      "final_url": "https://content-creation-skills.com/",
+      "redirected": false,
+      "x_robots_tag": "",
+      "title": "Content creation skills for AI agents | Content Creation Skills",
+      "title_len": 63,
+      "title_tags_in_head": 1,
+      "description": "Open-source agent skills that write hooks, scripts, posts and newsletters in your voice for Instagram, TikTok, LinkedIn, X, Threads and Substack. Works in Claude Code, Codex and Cursor.",
+      "description_len": 185,
+      "description_equals_title": false,
+      "canonical": "https://content-creation-skills.com/",
+      "robots": "",
+      "og_url": "https://content-creation-skills.com/",
+      "og_title": "Content creation skills for AI agents | Content Creation Skills",
+      "og_description": "Open-source agent skills that write hooks, scripts, posts and newsletters in your voice for Instagram, TikTok, LinkedIn, X, Threads and Substack. Works in Claude Code, Codex and Cursor.",
+      "og_image": "",
+      "twitter": {
+        "twitter:card": "summary"
+      },
+      "twitter_card": "summary",
+      "duplicate_tags": {},
+      "h1_count": 1,
+      "h2": [
+        "What are content creation skills?",
+        "Popular content creation skills",
+        "Works with your agent",
+        "FAQ",
+        "Turn your agent into a content creation expert with these skills."
+      ],
+      "h2_questions": 1,
+      "jsonld_types": [
+        "Answer",
+        "FAQPage",
+        "Organization",
+        "Person",
+        "Question",
+        "SoftwareSourceCode",
+        "WebSite"
+      ],
+      "jsonld_parse_errors": 0,
+      "images": 0,
+      "images_missing_alt": 0,
+      "raw_html_words": 1297,
+      "internal_links_out": 0,
+      "internal_links": [],
+      "sitemap_lastmod": ""
+    }
+  ]
+}

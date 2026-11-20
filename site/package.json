@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/check-skills.mjs && astro build",
+    "build": "node scripts/check-skills.mjs && astro build && node scripts/check-seo.mjs",
     "preview": "astro preview",
-    "check:skills": "node scripts/check-skills.mjs"
+    "check:skills": "node scripts/check-skills.mjs",
+    "check:seo": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.6",

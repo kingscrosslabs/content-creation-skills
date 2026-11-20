@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Audit · content-creation-skills.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap">
+<style>
+  /* aeo-seo-skills design system (site/DESIGN.md in the aeo-seo-skills repo).
+     Dark warm ground, one orange accent, flat surfaces, 5px structure. Don't restyle per site. */
+  :root {
+    color-scheme: dark;
+    --ink: #0c0b0a; --surface: #151311; --surface-2: #1d1a17;
+    --line: #2e2a26; --line-strong: #4a443e;
+    --text: #f3ece4; --muted: #a0968b;
+    --accent: #ff7a2f; --accent-press: #ff8a3d; --on-accent: #0c0b0a;
+    --green: #6fd098; --yellow: #facf5a;
+    --display: "Satoshi", "Hanken Grotesk", system-ui, sans-serif;
+    --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --r: 5px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ink); color: var(--text); font: 17px/1.55 var(--body); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 56px 20px 112px; }
+  @media (min-width: 960px) { .wrap { padding-left: 40px; padding-right: 40px; } }
+  h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; color: var(--text); }
+  h1 { font-size: clamp(44px, 7vw, 84px); line-height: 1; letter-spacing: -0.034em; margin: 14px 0 16px; overflow-wrap: anywhere; }
+  h2 { font-size: clamp(32px, 4.4vw, 48px); line-height: 1.08; letter-spacing: -0.034em; margin: clamp(64px, 10vw, 112px) 0 12px; padding-top: clamp(32px, 5vw, 56px); border-top: 1px solid var(--line); }
+  h2 .num { color: var(--accent); }
+  h3 { font-size: 22px; line-height: 1.25; letter-spacing: -0.03em; margin: 0 0 8px; }
+  h4 { font-size: 18px; line-height: 1.3; letter-spacing: -0.02em; margin: 0 0 6px; }
+  p { margin: 0 0 12px; }
+  a { color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  code { font: 0.88em var(--mono); background: var(--surface-2); border: 1px solid var(--line); padding: 1px 5px; border-radius: var(--r); overflow-wrap: anywhere; }
+  strong { font-weight: 600; }
+  .eyebrow { font: 500 13px/1.4 var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .eyebrow::before { content: "✦ "; color: var(--accent); }
+  .lead { font-size: clamp(18px, 2vw, 21px); line-height: 1.45; letter-spacing: -0.01em; color: var(--muted); }
+  .sub { color: var(--muted); font-size: 15px; }
+
+  .scores { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin: 36px 0 16px; }
+  .score { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; }
+  .score.overall { grid-column: 1 / -1; display: flex; align-items: center; gap: 28px; }
+  .score .grade { font: 700 48px/1 var(--display); letter-spacing: -0.034em; }
+  .score.overall .grade { font-size: clamp(64px, 9vw, 96px); }
+  .score .label { font-weight: 600; margin-top: 10px; }
+  .score.overall .label { margin-top: 0; font-family: var(--display); font-size: 22px; letter-spacing: -0.03em; }
+  .score .meta { color: var(--muted); font-size: 14px; }
+  .delta { font-size: 14px; color: var(--green); font-weight: 600; margin-top: 6px; }
+  .g-a { color: var(--green); } .g-b { color: var(--text); } .g-c { color: var(--yellow); } .g-d, .g-f { color: var(--accent); }
+
+  .toc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 20px 24px; margin-top: 28px; }
+  .toc ol { margin: 0; padding-left: 22px; columns: 2 260px; column-gap: 32px; }
+  .toc li { padding: 3px 0; }
+  .toc a { text-decoration: none; }
+
+  .model { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+  .model div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; }
+  .model p { color: var(--muted); margin: 0; }
+
+  .finding { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; margin: 20px 0; }
+  .finding .head, .package .head, .todo-item .head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 12px; }
+  /* Badges: a small dot plus a text label, so nobody needs the colour to read it. */
+  .badge { display: inline-flex; align-items: center; gap: 7px; font: 500 13px/1.4 var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); }
+  .badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+  .b-crit::before { background: var(--accent); }
+  .b-imp::before { background: var(--yellow); }
+  .b-pol::before { background: var(--muted); }
+  .b-fixed::before { background: var(--green); }
+  .b-new::before { background: var(--accent); }
+  .b-partial::before { background: transparent; border: 2px solid var(--yellow); width: 4px; height: 4px; }
+  .b-neutral { color: var(--muted); }
+  .b-neutral::before { background: transparent; border: 1.5px dashed var(--muted); width: 5px; height: 5px; }
+  .ids { font: 13px var(--mono); color: var(--muted); }
+  .pkg { display: inline-block; font: 500 13px/1.4 var(--body); color: var(--text); border: 1px solid var(--line-strong); border-radius: var(--r); padding: 2px 8px; }
+  .prereq { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--r); padding: 18px 22px; margin: 28px 0; }
+  .prereq p { margin: 6px 0 0; }
+  .row-label { font: 500 13px/1.4 var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 18px 0 6px; }
+  .lesson { border-left: 2px solid var(--accent); padding: 2px 0 2px 16px; }
+  .prompt { position: relative; background: var(--ink); color: var(--text); border: 1px solid var(--line); border-radius: var(--r); padding: 44px 18px 16px; font: 14px/1.6 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; }
+  .prompt::before { content: "$"; position: absolute; top: 12px; left: 18px; color: var(--accent); font-family: var(--mono); }
+  .copy { position: absolute; top: 9px; right: 10px; font: 500 13px var(--body); background: var(--accent); color: var(--on-accent); border: 0; border-radius: 100px; padding: 4px 14px; cursor: pointer; }
+  .copy:hover { background: var(--accent-press); }
+  .copy:active { transform: scale(0.98); }
+  .facts { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--muted); margin-top: 14px; }
+
+  ul.good { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  ul.good li { padding: 12px 0 12px 30px; position: relative; border-bottom: 1px solid var(--line); }
+  ul.good li::before { content: "✓"; position: absolute; left: 6px; color: var(--green); font-weight: 600; }
+  ol.rules li { padding: 4px 0; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font: 500 13px var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  tr:last-child td { border-bottom: 0; }
+  .split { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+  .col { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; }
+  .col.you { border-color: var(--line-strong); border-top: 3px solid var(--accent); }
+  .col h3 { margin-bottom: 4px; }
+  .package, .todo-item { border-top: 1px solid var(--line); padding: 18px 0 8px; }
+  .todo-item ol, .todo-item ul, .finding ol.steps { margin: 0 0 8px; padding-left: 22px; }
+  .todo-item li, .finding ol.steps li { padding: 2px 0; }
+  ul.checklist { list-style: none; padding-left: 0; }
+  ul.checklist li { position: relative; padding: 6px 0 6px 30px; border-bottom: 1px solid var(--line); }
+  ul.checklist li:last-child { border-bottom: 0; }
+  ul.checklist li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 16px; height: 16px; border: 1.5px solid var(--line-strong); border-radius: var(--r); }
+  ul.checklist li.done { color: var(--muted); }
+  ul.checklist li.done::before { content: "✓"; border-color: var(--green); color: var(--green); font: 600 12px/14px var(--body); text-align: center; }
+  .time { font-size: 13px; font-weight: 500; color: var(--muted); }
+  .why { font-size: 14px; color: var(--muted); }
+  .owner { font-weight: 600; color: var(--text); }
+  .next { margin-top: 56px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; }
+  .next p { margin: 8px 0 0; }
+  footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 14px; color: var(--muted); }
+  .mark { font-family: var(--mono); color: var(--text); text-decoration: none; }
+  .mark::before { content: "✦ "; color: var(--accent); }
+  @media (max-width: 640px) { .score.overall { flex-direction: column; align-items: flex-start; gap: 12px; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">AEO-SEO technical audit · Audit</div>
+  <h1>content-creation-skills.com</h1>
+  <p class="lead">How well Google and AI answer engines (ChatGPT, Perplexity, Google AI Overviews) can find, trust and quote this site. AEO is answer engine optimization: getting quoted in AI answers. SEO is ranking in Google.</p>
+  <p class="sub">2026-11-20 · 1 page from the sitemap · 1 sampled in depth (the site is one page) · Plan only: nothing in the site was changed by this audit.</p>
+
+  <div class="prereq">
+    <div class="eyebrow">Before you start</div>
+    <p>The site shares its layout and components with <a href="https://aeo-seo-skills.com">aeo-seo-skills.com</a>. Fixes to <code>Base.astro</code> land in both repos together, and the other site has its own report with the same packages.</p>
+  </div>
+
+  <div class="scores">
+    <div class="score overall">
+      <div class="grade g-d">D+</div>
+      <div>
+        <div class="label">Overall</div>
+        <div class="meta">67% of points (35/52) · 12 pass · 6 partial · 5 fail · 0 unconfirmed · 5 n/a</div>
+      </div>
+    </div>
+    <div class="score"><div class="grade g-f">F</div><div class="label">A · Quotable pages</div><div class="meta">3/7 pass · 7.5/14 pts</div></div>
+    <div class="score"><div class="grade g-d">D+</div><div class="label">B · Found faster</div><div class="meta">4/8 pass · 13.5/20 pts</div></div>
+    <div class="score"><div class="grade g-a">A</div><div class="label">C · Consistent signals</div><div class="meta">5/5 pass · 12/12 pts</div></div>
+    <div class="score"><div class="grade g-f">F</div><div class="label">D · Runs itself</div><div class="meta">0/3 pass · 2/6 pts</div></div>
+  </div>
+  <p class="sub">Grades are directional, not a benchmark. They show where the biggest wins are, and the follow-up audit uses them to prove the fixes stuck. The site launched on 2026-11-19, so Search Console has no impressions to measure yet: the baseline is zero.</p>
+
+  <nav class="toc">
+    <ol>
+      <li><a href="#model">How search and AI search find you</a></li>
+      <li><a href="#critical">Critical findings</a></li>
+      <li><a href="#important">Important findings</a></li>
+      <li><a href="#polish">Polish</a></li>
+      <li><a href="#good">What's already good</a></li>
+      <li><a href="#rules">Rules for new pages</a></li>
+      <li><a href="#plan">Action plan: your agent vs. you</a></li>
+      <li><a href="#unscored">Not scored this run</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="model"><span class="num">1</span> · How search and AI search find you</h2>
+  <div class="model">
+    <div><h3>Google</h3><p>Crawlers read your pages, add the ones they trust to the index, then rank them for each search. Where you land depends on whether the page answers the search, and how much Google trusts the domain.</p></div>
+    <div><h3>AI answer engines</h3><p>ChatGPT, Perplexity, Claude and Google AI Overviews run their own searches on engines like Google, Bing and Brave, read the top results, and quote a few pages. If those engines can't find you, the AI can't either.</p></div>
+    <div><h3>What this audit checks</h3><p>That your pages are quotable (A), found fast (B), never contradict each other (C), and that the setup keeps itself right on every new page (D).</p></div>
+  </div>
+
+  <h2 id="critical"><span class="num">2</span> · Critical findings</h2>
+  <p class="sub">These weaken indexing or trust. Neither is broken outright: both scored partial. Fix them first.</p>
+  <article class="finding">
+    <div class="head"><span class="badge b-crit">Critical</span><span class="badge b-partial">Partial</span><span class="ids">A4</span><span class="pkg">Head and metadata</span></div>
+    <h3>The structured data doesn't say clearly who's behind the site</h3>
+    <div class="row-label">Evidence</div>
+    <p>The homepage's JSON-LD parses and has <code>WebSite</code>, <code>SoftwareSourceCode</code> and <code>FAQPage</code>. King's Cross Labs only appears as a nested <code>publisher</code> with a name and URL: no standalone <code>Organization</code>, no <code>logo</code>, no <code>sameAs</code> links. The <code>Person</code> (Mika Reyes) has no <code>sameAs</code> either.</p>
+    <div class="row-label">Where it lives</div>
+    <p><code>site/src/layouts/Base.astro</code> (the JSON-LD block, shared with aeo-seo-skills.com), <code>site/public/</code> (no logo file yet)</p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">AI answer engines and Google decide whether to trust an answer partly by who stands behind it. A standalone Organization with a logo and links to its real profiles (sameAs) lets them connect this site to King's Cross Labs and to Mika, instead of guessing from a name.</p>
+    <div class="row-label">Prompt to fix it</div>
+    <div class="prompt"><button class="copy" type="button">Copy</button>In site/src/layouts/Base.astro, add a standalone Organization JSON-LD node for King's Cross Labs: name, url https://kingscrosslabs.com, logo (an absolute URL to a square PNG at least 112x112 in site/public/, e.g. /logo.png made from the ✦ mark), and sameAs ["https://github.com/kingscrosslabs"]. Give it an @id and point WebSite.publisher and SoftwareSourceCode.publisher at that @id. Give the Person (Mika Reyes) an @id and sameAs ["https://mikareyes.com"]; ask before adding any other profile URL. Make the same change in the content-creation-skills and aeo-seo-skills repos, since Base.astro is shared. Verify: npm run build, then check the built dist/index.html JSON-LD parses and has the Organization with logo and sameAs.</div>
+    <div class="facts"><span>Effort: S</span><span class="owner">Owner: your agent</span></div>
+  </article>
+  <article class="finding">
+    <div class="head"><span class="badge b-crit">Critical</span><span class="badge b-partial">Partial</span><span class="ids">B1</span><span class="pkg">Crawl files</span></div>
+    <h3>The sitemap has no dates, so crawlers can't tell when the page changed</h3>
+    <div class="row-label">Evidence</div>
+    <p><code>/sitemap-index.xml</code> → <code>/sitemap-0.xml</code> loads and lists <code>https://content-creation-skills.com/</code> on the canonical host, but there's no <code>&lt;lastmod&gt;</code> (sweep: <code>missing_lastmod</code> 1). <code>/sitemap.xml</code> itself is a 404; robots.txt names the index, so crawlers still find it.</p>
+    <div class="row-label">Where it lives</div>
+    <p><code>site/astro.config.mjs</code> (the <code>sitemap()</code> integration has no <code>serialize</code> or <code>lastmod</code>)</p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">The sitemap is the map you hand crawlers. An honest last-modified date tells them a page changed and is worth re-reading. Leave it out and they recrawl on their own schedule; set every date to the build time and they learn to ignore it.</p>
+    <div class="row-label">Prompt to fix it</div>
+    <div class="prompt"><button class="copy" type="button">Copy</button>In site/astro.config.mjs, set lastmod on every sitemap entry from real edits, not the build time: at build, read the date of the last git commit that touched site/src (git log -1 --format=%cI -- src) and pass it through sitemap({ serialize }) as item.lastmod. Fall back to no lastmod if git isn't available. Verify: npm run build, then dist/sitemap-0.xml has a &lt;lastmod&gt; equal to the last commit date under site/src.</div>
+    <div class="facts"><span>Effort: S</span><span class="owner">Owner: your agent</span></div>
+  </article>
+
+  <h2 id="important"><span class="num">3</span> · Important findings</h2>
+  <p class="sub">These lose you clicks, citations or crawl speed.</p>
+  <article class="finding">
+    <div class="head"><span class="badge b-imp">Important</span><span class="ids">A6</span><span class="pkg">Head and metadata</span></div>
+    <h3>No share image: links to the site show up as a bare text card</h3>
+    <div class="row-label">Evidence</div>
+    <p>No <code>og:image</code> on the homepage, and <code>twitter:card</code> is <code>summary</code>. <code>og:title</code>, <code>og:description</code> and <code>og:url</code> are all set and correct.</p>
+    <div class="row-label">Where it lives</div>
+    <p><code>site/src/layouts/Base.astro</code> (head), <code>site/public/</code></p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">When someone pastes the link into Slack, LinkedIn, X or iMessage, the share card is the first thing anyone sees of the site. A card with a picture and the page's own title gets clicked. A text-only card gets scrolled past.</p>
+    <div class="row-label">Prompt to fix it</div>
+    <div class="prompt"><button class="copy" type="button">Copy</button>Add a 1200x630 share image for content-creation-skills.com in the site's design system (warm near-black ground, the ✦ mark, the wordmark, the hero headline) as site/public/og.png. In site/src/layouts/Base.astro, add og:image (absolute URL), og:image:width 1200, og:image:height 630, og:image:alt, and switch twitter:card to summary_large_image, with the image path coming from src/data/site.ts so each site sets its own. Make the Base.astro change in both repos. Verify: npm run build, then dist/index.html has the tags, and https://content-creation-skills.com/og.png loads after deploy.</div>
+    <div class="facts"><span>Effort: M</span><span class="owner">Owner: your agent</span></div>
+  </article>
+  <article class="finding">
+    <div class="head"><span class="badge b-imp">Important</span><span class="ids">A1</span><span class="pkg">Copy</span></div>
+    <h3>The meta description is 185 characters, so Google cuts it off</h3>
+    <div class="row-label">Evidence</div>
+    <p>Description: 185 characters (pass bar 110–160). The title is 63 characters, over the 60 that <code>site.md</code> sets for title plus suffix. Google truncates both in results.</p>
+    <div class="row-label">Where it lives</div>
+    <p><code>site/src/data/site.ts</code> (<code>title</code> and <code>description</code>)</p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">The description is the two-line ad under your title in Google. Past about 160 characters, Google cuts it mid-sentence, usually right before the platforms that make the pitch specific.</p>
+    <div class="row-label">Prompt to fix it</div>
+    <div class="prompt"><button class="copy" type="button">Copy</button>In site/src/data/site.ts, rewrite description to 110–160 characters that still names the main platforms and says the skills write in your voice, and shorten title so title + " | Content Creation Skills" is 60 characters or fewer (or shorten the suffix). Follow site/BRAND.md for wording. Verify: npm run build, then the built &lt;title&gt; and meta description lengths are inside the bars.</div>
+    <div class="facts"><span>Effort: S</span><span class="owner">Owner: your agent</span></div>
+  </article>
+  <article class="finding">
+    <div class="head"><span class="badge b-imp">Important</span><span class="badge b-partial">Partial</span><span class="ids">A7</span><span class="pkg">Copy</span></div>
+    <h3>The hero says what the skills do, but not who they're for</h3>
+    <div class="row-label">Evidence</div>
+    <p>Under the H1, the first line says what the skills do and where they run. It never names the reader that <code>site/BRAND.md</code> describes (founders, marketers and creators who post every week).</p>
+    <div class="row-label">Where it lives</div>
+    <p><code>site/src/data/site.ts</code> (<code>hero.sub</code>)</p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">When an AI engine summarizes a product, it lifts the first plain sentence that says what it is and who it's for. If the reader isn't named, the engine has to guess, and it may recommend you to the wrong people or not at all.</p>
+    <div class="row-label">Prompt to fix it</div>
+    <div class="prompt"><button class="copy" type="button">Copy</button>In site/src/data/site.ts, rewrite hero.sub so its first sentence says what the skills are and who they're for, using the audience in site/BRAND.md (founders, marketers and creators who post every week). Keep it under about 30 words and keep the 'you approve' promise. Show me two options before you change it.</div>
+    <div class="facts"><span>Effort: S</span><span class="owner">Owner: your agent</span></div>
+  </article>
+  <article class="finding">
+    <div class="head"><span class="badge b-imp">Important</span><span class="badge b-partial">Partial</span><span class="ids">B2 · D1</span><span class="pkg">Crawl files</span></div>
+    <h3>llms.txt is written by hand, and there's no full-text version for AI</h3>
+    <div class="row-label">Evidence</div>
+    <p><code>/llms.txt</code> loads as text and opens with a one-line summary and the install command. It links the GitHub repo, the README and aeo-seo-skills.com, but not the skill list. It's a static file, so it drifts when <code>site.ts</code> changes. <code>/llms-full.txt</code> and <code>/index.md</code> are both 404.</p>
+    <div class="row-label">Where it lives</div>
+    <p><code>site/public/llms.txt</code> (hand-written)</p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">llms.txt is a short, plain-text map of the site written for AI. It's only useful if it stays current. Generating it from the same data the page uses means it updates with every change, and a full-text version gives an AI engine the whole page without any HTML in the way.</p>
+    <div class="row-label">Prompt to fix it</div>
+    <div class="prompt"><button class="copy" type="button">Copy</button>Replace site/public/llms.txt with an Astro endpoint, site/src/pages/llms.txt.ts, that builds the same file from src/data/site.ts: the summary, the install line, a line per skill with its status and GitHub link, and the FAQ questions. Add src/pages/llms-full.txt.ts (all page copy as Markdown, FAQs included) and src/pages/index.md.ts (a Markdown mirror of the homepage). Verify: npm run build, then dist/llms.txt, dist/llms-full.txt and dist/index.md exist and list every skill in site.ts.</div>
+    <div class="facts"><span>Effort: M</span><span class="owner">Owner: your agent</span></div>
+  </article>
+  <article class="finding">
+    <div class="head"><span class="badge b-imp">Important</span><span class="ids">B5</span><span class="pkg">Crawl files</span></div>
+    <h3>Nothing tells Bing when the site changes</h3>
+    <div class="row-label">Evidence</div>
+    <p>There's no IndexNow key file and no ping in the build, and the repo has no <code>.github/</code> folder. The GitHub deployments API returns nothing for an environment named <code>Production</code>: Vercel names it <code>Production – content-creation-skills</code>, which matters when the workflow is written.</p>
+    <div class="row-label">Where it lives</div>
+    <p>Nothing yet. It needs <code>site/public/&lt;key&gt;.txt</code> and <code>.github/workflows/indexnow.yml</code></p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">IndexNow tells Bing (and Yandex, Seznam and others) the moment a page changes, instead of waiting for a recrawl. Bing's index feeds ChatGPT search and Copilot, so on a site that's AI-first this is the fastest way to get changes in front of them. Google doesn't use it, which is why the sitemap still matters.</p>
+    <div class="row-label">Prompt to fix it</div>
+    <div class="prompt"><button class="copy" type="button">Copy</button>Add IndexNow to content-creation-skills.com: generate a key, save it as site/public/&lt;key&gt;.txt, and add .github/workflows/indexnow.yml that runs on deployment_status when the state is success and the environment starts with 'Production' (Vercel names it 'Production – content-creation-skills', so don't match 'Production' exactly). It should POST every URL in https://content-creation-skills.com/sitemap-0.xml to https://api.indexnow.org/indexnow with the key. Never ping from preview deploys. Verify after merge: gh run list --workflow indexnow.yml shows a successful run, not skipped.</div>
+    <div class="facts"><span>Effort: M</span><span class="owner">Owner: your agent</span></div>
+  </article>
+  <article class="finding">
+    <div class="head"><span class="badge b-imp">Important</span><span class="badge b-partial">Partial</span><span class="ids">D2</span><span class="pkg">Checks</span></div>
+    <h3>Nothing in the build checks titles, descriptions or the share image</h3>
+    <div class="row-label">Evidence</div>
+    <p><code>npm run build</code> runs <code>check-skills.mjs</code>, which only checks that the skill list matches the <code>skills/</code> folders. No check covers title length, description length, <code>og:image</code> or JSON-LD, which is how a 185-character description shipped.</p>
+    <div class="row-label">Where it lives</div>
+    <p><code>site/scripts/</code>, <code>site/package.json</code></p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">A fix that lives only in one sweep comes undone on the next edit. If the build fails when a description runs long or the share image goes missing, every future page is born right, whoever writes it.</p>
+    <div class="row-label">Prompt to fix it</div>
+    <div class="prompt"><button class="copy" type="button">Copy</button>Add site/scripts/check-seo.mjs that reads every built HTML file in dist/ after astro build and fails the build if: the title is over 60 characters, the meta description is outside 110–160 characters or equals the title, there isn't exactly one H1, the canonical or og:url is missing or isn't on the canonical host, og:image is missing, or any JSON-LD block fails to parse. Run it at the end of npm run build and add npm run check:seo. List it in site/aeo-seo/site.md → Commands. Verify: npm run build passes on the fixed site, and fails if you lengthen the description.</div>
+    <div class="facts"><span>Effort: S</span><span class="owner">Owner: your agent</span></div>
+  </article>
+  <article class="finding">
+    <div class="head"><span class="badge b-imp">Important</span><span class="ids">D3</span><span class="pkg">Agent, then you</span></div>
+    <h3>No analytics, so there's no way to see AI referrals</h3>
+    <div class="row-label">Evidence</div>
+    <p>No analytics script in the homepage HTML (no Vercel Web Analytics, Google Analytics, Plausible or PostHog). You confirmed on 2026-11-20 that this isn't on purpose. The conversion is a GitHub star, and GitHub only shows repo referrers, not what happened on the site.</p>
+    <div class="row-label">Where it lives</div>
+    <p><code>site/src/layouts/Base.astro</code>, plus the Vercel dashboard</p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">You can't grow a channel you can't see. AI referrals arrive from <code>chatgpt.com</code>, <code>perplexity.ai</code>, <code>claude.ai</code>, <code>gemini.google.com</code> and <code>copilot.microsoft.com</code>. Site analytics shows which of them send visitors, and GitHub's Insights → Traffic shows which of those visitors go on to the repo.</p>
+    <div class="row-label">Your steps</div>
+    <ol class="steps">
+      <li>Your agent adds Vercel Web Analytics to <code>site/src/layouts/Base.astro</code> with the plain script tag (<code>/_vercel/insights/script.js</code>). It's cookieless, so there's no consent banner, and no new npm package. It goes in both repos because the layout is shared.</li>
+      <li>In <a href="https://vercel.com/dashboard">Vercel</a>, open the <strong>content-creation-skills</strong> project → <strong>Analytics</strong> → <strong>Enable</strong>.</li>
+      <li>After the next deploy, open the site once. You should see a visit in the Analytics tab within a few minutes.</li>
+      <li>Each week, check Analytics → <strong>Referrers</strong> for the AI hosts above, and GitHub → <strong>content-creation-skills</strong> → Insights → <strong>Traffic</strong> → Referring sites.</li>
+    </ol>
+    <div class="facts"><span>~2 min for you</span><span class="owner">Owner: your agent, then you</span></div>
+  </article>
+  <article class="finding">
+    <div class="head"><span class="badge b-imp">Important</span><span class="ids">B10</span><span class="pkg">You</span></div>
+    <h3>The site hasn't been submitted to Brave Search</h3>
+    <div class="row-label">Evidence</div>
+    <p>You confirmed on 2026-11-20 that the homepage hasn't been submitted.</p>
+    <div class="row-label">The principle</div>
+    <p class="lesson">Brave runs its own index, separate from Google and Bing, and AI tools that search the web through the Brave Search API read from it. A brand-new domain can sit outside that index for weeks unless someone hands it over.</p>
+    <div class="row-label">Your steps</div>
+    <ol class="steps">
+      <li>Open <a href="https://search.brave.com/submit-url">search.brave.com/submit-url</a>.</li>
+      <li>Paste <code>https://content-creation-skills.com/</code> and submit.</li>
+      <li>Do the same for <code>https://content-creation-skills.com/sitemap-index.xml</code>.</li>
+      <li>Done when the form confirms. A <code>site:content-creation-skills.com</code> search on Brave should show the page within a few weeks.</li>
+    </ol>
+    <div class="facts"><span>~2 min</span><span class="owner">Owner: you</span></div>
+  </article>
+
+  <h2 id="polish"><span class="num">4</span> · Polish</h2>
+  <p class="sub">Nothing at polish level this run. The two polish checks either passed (A9, short URLs) or don't apply yet (A8, no images).</p>
+
+  <h2 id="good"><span class="num">5</span> · What's already good</h2>
+  <p class="sub">Keep these working when you change things.</p>
+  <ul class="good">
+    <li><strong>One host.</strong> <code>http://</code>, <code>www</code> and <code>http://www</code> all 308 to <code>https://content-creation-skills.com/</code>, one hop each from https.</li>
+    <li><strong>Clean canonicals.</strong> A self-referencing canonical that stays clean with <code>?utm_source=test</code>, and an <code>og:url</code> that matches it.</li>
+    <li><strong>Indexed with the right canonical.</strong> Search Console: "Submitted and indexed", last crawled 2026-11-19 23:07 UTC, and Google's canonical matches yours.</li>
+    <li><strong>AI crawlers get in.</strong> robots.txt allows everyone and names the sitemap. GPTBot, ClaudeBot, PerplexityBot and OAI-SearchBot all get a 200.</li>
+    <li><strong>Readable without JavaScript.</strong> 1,297 words in the raw HTML, with the headings, FAQs and JSON-LD all in it.</li>
+    <li><strong>Quotable FAQs.</strong> 10 questions, visible on the page, with <code>FAQPage</code> markup that matches.</li>
+    <li><strong>One H1</strong>, and the JSON-LD parses with no errors.</li>
+    <li><strong>Real 404s.</strong> A missing URL returns 404, not a soft 404.</li>
+    <li><strong>Owned code, automatic deploys.</strong> Astro in the repo, and every merge to main deploys on Vercel.</li>
+  </ul>
+
+  <h2 id="rules"><span class="num">6</span> · Rules for new pages</h2>
+  <p class="sub">The site is one page today, so these are for the first blog, comparison or use-case pages. Bake them into the page template and the check command (finding D2) so every new page is born with them.</p>
+  <ol class="rules">
+    <li><strong>A real description.</strong> 110–160 characters, not the title (A1).</li>
+    <li><strong>A short title.</strong> Title plus the brand suffix, 60 characters or fewer (A1).</li>
+    <li><strong>Its own share image.</strong> 1200×630 <code>og:image</code> with <code>twitter:card</code> <code>summary_large_image</code> (A6).</li>
+    <li><strong>Answer first.</strong> The first sentence under the H1 and under each H2 answers it outright and names the subject (A7).</li>
+    <li><strong>2–4 real FAQs</strong> on every guide or post, visible and in <code>FAQPage</code> markup (A3).</li>
+    <li><strong>In the sitemap with a true <code>lastmod</code></strong>, and in the generated llms.txt (B1, B2).</li>
+    <li><strong>Linked both ways.</strong> Every new page links to the homepage and 2–3 related pages, and the homepage links back to it, so nothing is orphaned (B8).</li>
+    <li><strong>Byline and dates</strong> on articles: Mika Reyes, linked to a bio, with published and updated dates (A5).</li>
+  </ol>
+
+  <h2 id="plan"><span class="num">7</span> · Action plan</h2>
+  <p class="sub">Split by who has to act. Your AI coding agent can do the left column in the code; the right column needs your login and a few clicks.</p>
+  <div class="split">
+    <section class="col">
+      <h3>What your AI agent will do</h3>
+      <p class="sub">Ordered by severity, then effort. The first three packages touch different files and run in parallel; Checks runs after them. Pick the packages to implement.</p>
+      <div class="package">
+        <div class="head"><span class="pkg">Head and metadata</span><span class="badge b-crit">Critical</span><span class="ids">A4 · A6 · D3</span></div>
+        <p>A standalone Organization with a logo and sameAs, a 1200×630 share image, and the Vercel Analytics tag. <code>Base.astro</code> is shared, so the same change lands in aeo-seo-skills.com's repo too.</p>
+        <div class="facts"><span>Effort: M</span><span>Files: <code>src/layouts/Base.astro</code>, <code>public/og.png</code>, <code>public/logo.png</code></span></div>
+      </div>
+      <div class="package">
+        <div class="head"><span class="pkg">Crawl files</span><span class="badge b-crit">Critical</span><span class="ids">B1 · B2 · B5 · D1</span></div>
+        <p>Honest <code>lastmod</code> in the sitemap, llms.txt, llms-full.txt and index.md generated from <code>site.ts</code>, and IndexNow pinged on every production deploy.</p>
+        <div class="facts"><span>Effort: M</span><span>Files: <code>astro.config.mjs</code>, <code>src/pages/llms*.ts</code>, <code>src/pages/index.md.ts</code>, <code>public/llms.txt</code> (removed), <code>public/&lt;key&gt;.txt</code>, <code>.github/workflows/indexnow.yml</code></span></div>
+      </div>
+      <div class="package">
+        <div class="head"><span class="pkg">Copy</span><span class="badge b-imp">Important</span><span class="ids">A1 · A7</span></div>
+        <p>A description and title inside the limits, and a hero line that names who the skills are for. You pick from two options.</p>
+        <div class="facts"><span>Effort: S</span><span>Files: <code>src/data/site.ts</code></span></div>
+      </div>
+      <div class="package">
+        <div class="head"><span class="pkg">Checks</span><span class="badge b-imp">Important</span><span class="ids">D2</span></div>
+        <p>A <code>check-seo.mjs</code> step in the build that fails on long titles, bad descriptions, a missing <code>og:image</code> or broken JSON-LD.</p>
+        <div class="facts"><span>Effort: S</span><span>Files: <code>scripts/check-seo.mjs</code>, <code>package.json</code></span><span>After the three above, so it passes on the fixed site</span></div>
+      </div>
+    </section>
+    <section class="col you">
+      <h3>What needs you</h3>
+      <p class="sub">Account tasks an agent can't reach. About 5 minutes in all.</p>
+      <div class="todo-item">
+        <div class="head"><span class="ids">B3 · B4 · B5 · B10</span></div>
+        <h4>New domain setup checklist</h4>
+        <ul class="checklist">
+          <li class="done">Verified in Google Search Console (confirmed 2026-11-20)</li>
+          <li class="done">Sitemap submitted in Google Search Console: "Submitted and indexed" (confirmed 2026-11-20)</li>
+          <li class="done">Verified in Bing Webmaster Tools, sitemap submitted (you confirmed 2026-11-20)</li>
+          <li>Submitted to <a href="https://search.brave.com/submit-url">Brave Search</a></li>
+          <li>IndexNow pings Bing on every production deploy (agent, in the Crawl files package)</li>
+        </ul>
+      </div>
+      <div class="todo-item">
+        <div class="head"><span class="badge b-imp">Important</span><span class="ids">B10</span><span class="time">~2 min</span></div>
+        <h4>Submit the site to Brave Search</h4>
+        <ol>
+          <li>Open <a href="https://search.brave.com/submit-url">search.brave.com/submit-url</a>.</li>
+          <li>Submit <code>https://content-creation-skills.com/</code>, then <code>https://content-creation-skills.com/sitemap-index.xml</code>.</li>
+          <li>Done when the form confirms.</li>
+        </ol>
+        <p class="why">Why you: the form needs a person.</p>
+      </div>
+      <div class="todo-item">
+        <div class="head"><span class="badge b-imp">Important</span><span class="ids">D3</span><span class="time">~2 min, after the agent's change</span></div>
+        <h4>Turn on Vercel Web Analytics</h4>
+        <ol>
+          <li>Open <a href="https://vercel.com/dashboard">Vercel</a> → the <strong>content-creation-skills</strong> project → <strong>Analytics</strong>.</li>
+          <li>Click <strong>Enable</strong>.</li>
+          <li>Done when a visit shows up after the next deploy.</li>
+        </ol>
+        <p class="why">Why you: it needs your Vercel login. The agent adds the script tag.</p>
+      </div>
+      <div class="todo-item">
+        <div class="head"><span class="badge b-imp">Important</span><span class="ids">A7</span><span class="time">~2 min</span></div>
+        <h4>Pick the new hero line</h4>
+        <p>Your agent drafts two versions that name founders, marketers and creators who post every week. You choose one.</p>
+        <p class="why">Why you: it's your positioning.</p>
+      </div>
+      <div class="todo-item">
+        <div class="head"><span class="ids">B9</span><span class="time">~1 min, optional</span></div>
+        <h4>Run PageSpeed by hand</h4>
+        <ol>
+          <li>Open <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fcontent-creation-skills.com%2F">PageSpeed Insights for content-creation-skills.com</a> and check the mobile tab.</li>
+          <li>LCP under 2.5s and CLS under 0.1 is a pass. Otherwise, next week's audit scores it.</li>
+        </ol>
+        <p class="why">Why you: the free API was over its daily quota during this audit.</p>
+      </div>
+    </section>
+  </div>
+
+  <h2 id="unscored"><span class="num">8</span> · Not scored this run</h2>
+  <p class="sub">n/a checks are left out of the grade.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Check</th><th>Result</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td><span class="ids">A5</span> Author byline and dates</td><td><span class="badge b-neutral">n/a</span></td><td>No articles on the site yet.</td></tr>
+        <tr><td><span class="ids">A8</span> Alt text</td><td><span class="badge b-neutral">n/a</span></td><td>No <code>&lt;img&gt;</code> tags. The agent logos are inline SVG.</td></tr>
+        <tr><td><span class="ids">B8</span> Internal links</td><td><span class="badge b-neutral">n/a</span></td><td>The site is one page, so the sweep flags the homepage as an orphan and a dead end by definition. Scored from the first new page.</td></tr>
+        <tr><td><span class="ids">B9</span> Speed (Core Web Vitals)</td><td><span class="badge b-neutral">n/a</span></td><td>The PageSpeed Insights API was over its shared daily quota. Run it by hand (see "What needs you") or next week.</td></tr>
+        <tr><td><span class="ids">C6</span> App and sign-in pages</td><td><span class="badge b-neutral">n/a</span></td><td>No app or sign-in host.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="next">
+    <div class="eyebrow">Next audit</div>
+    <p><strong>Run this report again on 2026-11-27.</strong> Search engines need a few days to recrawl, so a week is the first useful check. The follow-up shows before and after grades, what's verified on the live site, and what's still open.</p>
+  </div>
+
+  <footer>
+    <a class="mark" href="https://github.com/kingscrosslabs/aeo-seo-skills">aeo-seo-skills</a>
+    <span>Made with the <code>aeo-seo-technical-audit</code> skill. Built by Mika Reyes at King's Cross Labs.</span>
+  </footer>
+
+</div>
+<script>
+  document.querySelectorAll('.prompt .copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.parentElement.textContent.replace(/^Copy/, '').trim();
+      try {
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied';
+          setTimeout(function () { btn.textContent = 'Copy'; }, 1500);
+        });
+      } catch (e) { btn.textContent = 'Select and copy'; }
+    });
+  });
+</script>
+</body>
+</html>

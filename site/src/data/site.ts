@@ -27,15 +27,23 @@ export const site = {
   repo,
   skillsPath: `${repo}/tree/main/skills`,
   install: "npx skills add kingscrosslabs/content-creation-skills",
-  title: "Content creation skills for AI agents | Content Creation Skills",
+  title: "Content creation skills for AI agents",
   description:
-    "Open-source agent skills that write hooks, scripts, posts and newsletters in your voice for Instagram, TikTok, LinkedIn, X, Threads and Substack. Works in Claude Code, Codex and Cursor.",
+    "Open-source agent skills that write hooks, scripts and posts in your voice for Instagram, TikTok, LinkedIn and X. Works in Claude Code, Codex and Cursor.",
+
+  // The opening of /llms.txt and its sister-project link (src/lib/markdown.ts).
+  llms: {
+    summary:
+      "Open-source agent skills that write hooks, scripts, posts, carousels and newsletters in the user's own voice for Instagram, TikTok, YouTube Shorts, LinkedIn, X, Threads and Substack. They read a small content/ folder about the user before writing, learn from the user's best-performing posts, and wait for approval on every hook, outline and draft. Built by Mika Reyes at King's Cross Labs. MIT licence.",
+    sisterLabel: "AEO-SEO skills",
+    sisterNote: "the sister project for getting found in Google and quoted by AI",
+  },
 
   hero: {
     eyebrow: "Open source · MIT · By King's Cross Labs",
     headline: "Content creation skills",
     highlight: "for AI agents",
-    sub: "Skills that write hooks, scripts, posts and newsletters in your voice, for Instagram, TikTok, LinkedIn, X, Threads and Substack. They learn from your best posts. You approve every draft.",
+    sub: "For founders, marketers and creators who post every week: skills that write hooks, scripts, posts and newsletters in your voice, for Instagram, TikTok, LinkedIn, X, Threads and Substack. You approve every draft.",
   },
 
   what: {

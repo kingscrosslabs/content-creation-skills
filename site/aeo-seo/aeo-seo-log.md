@@ -20,11 +20,17 @@ These win over the skills' default rules when they conflict.
 | 2026-11-19 | AI answer engines (ChatGPT, Perplexity, Claude, Google AI Overviews) come first; Google rankings second. | People ask their agent which skills to install | AI referrals stay at zero after 3 months of pages |
 | 2026-11-19 | Keep this profile public, in `site/aeo-seo/`. | It's a live example of the skills running on their own site | Something in it needs to be private |
 | 2026-11-19 | Every change ships through a branch and a PR that Mika merges. Never push to main. | Every change so far has shipped that way | Never |
+| 2026-11-20 | Use Vercel Web Analytics for site visits, AI referrers included, and GitHub Insights → Traffic for repo referrers. | Nothing measured visits before | A signup or email CTA is added |
 | 2026-11-19 | A change to a shared component in `site/src/` gets made in aeo-seo-skills too. | The two sites share one design system (`site/README.md`) | The sites split |
 
 ---
 
 ## Log
+
+### 2026-11-20
+- [research] Technical audit: overall D+ (A F, B D+, C A, D F). Report: research/audits/technical-audit-2026-11-20.html. Evidence: research/audits/2026-11-20/.
+- [research] Search Console URL inspection: homepage "Submitted and indexed", Google's canonical matches ours.
+- [decision] Add analytics (Vercel Web Analytics). The missing script wasn't on purpose (Mika, 2026-11-20).
 
 ### 2026-11-19
 - [baseline] Search Console (sc-domain:content-creation-skills.com), 2026-10-20 to 2026-11-16: 0 impressions, 0 clicks. The site launched on 2026-11-19 (PR #2), so this is the true zero.

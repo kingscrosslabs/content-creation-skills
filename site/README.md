@@ -22,7 +22,11 @@ Needs Node 22.12 or newer.
 |---|---|
 | `src/data/site.ts` | All copy: hero, explainer, skill list and statuses, agents, FAQs |
 | `src/styles/tokens.css` | The accent colour (blue). The only stylesheet unique to this site |
-| `public/` | Favicon, robots.txt, llms.txt, Satoshi font files |
+| `public/` | Favicon, robots.txt, share image (`og.png`), KCL logo, IndexNow key, Satoshi font files |
+| `src/pages/llms.txt.ts`, `llms-full.txt.ts`, `index.md.ts` | The AI-readable versions of the page, generated from `site.ts` by `src/lib/markdown.ts` |
+| `scripts/og/generate.mjs` | Regenerates `og.png` and `logo.png`: `node --experimental-strip-types scripts/og/generate.mjs` |
+| `scripts/check-seo.mjs` | Runs after the build and fails it on a long title, a bad description, a missing `og:image` or broken JSON-LD |
+| `.github/workflows/indexnow.yml` (repo root) | Pings IndexNow (Bing) with every sitemap URL after each production deploy |
 | everything else in `src/` | Shared with the [aeo-seo-skills](https://github.com/kingscrosslabs/aeo-seo-skills) site. Change both together |
 
 ## Keeping the skill list in sync

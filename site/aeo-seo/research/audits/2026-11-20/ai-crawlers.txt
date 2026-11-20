@@ -1,0 +1,4 @@
+GPTBot 200
+ClaudeBot 200
+PerplexityBot 200
+OAI-SearchBot 200
