@@ -1,0 +1,13 @@
+# Content Creation Skills
+
+> Open-source agent skills that write hooks, scripts, posts, carousels and newsletters in the user's own voice for Instagram, TikTok, YouTube Shorts, LinkedIn, X, Threads and Substack. They read a small content/ folder about the user before writing, learn from the user's best-performing posts, and wait for approval on every hook, outline and draft. Built by Mika Reyes at King's Cross Labs. MIT licence.
+
+Install: `npx skills add kingscrosslabs/content-creation-skills`
+
+Works in Claude Code, Codex, Cursor and any agent that loads skills in the Agent Skills format (a folder with a SKILL.md file).
+
+## Links
+
+- [GitHub repo](https://github.com/kingscrosslabs/content-creation-skills): source, install guide and every SKILL.md
+- [README](https://github.com/kingscrosslabs/content-creation-skills/blob/main/README.md): skill map, install, setup
+- [AEO-SEO skills](https://aeo-seo-skills.com): the sister project for getting found in Google and quoted by AI

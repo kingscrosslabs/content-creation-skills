@@ -61,13 +61,13 @@ Checked against the live site on 2026-11-19.
 
 - **OpenSEO project:** Content Creation Skills (https://app.openseo.so/p/0598c595-14ec-4c48-81b7-175cce160657), US / English
 - **Search Console property:** sc-domain:content-creation-skills.com, read through mika@kingscrosslabs.com
-- **Bing Webmaster Tools:** <!-- Not checked yet. aeo-seo-technical-audit asks. -->
+- **Bing Webmaster Tools:** connected, sitemap submitted (Mika confirmed 2026-11-20)
 
 ### New domain setup checklist
 
-- [x] Verified in Google Search Console <!-- date unknown; the property exists as of 2026-11-19 -->
-- [ ] Sitemap submitted in Google Search Console <!-- date -->
-- [ ] Verified in Bing Webmaster Tools, sitemap submitted <!-- date -->
-- [ ] Submitted to Brave Search (https://search.brave.com/submit-url) <!-- date -->
-- [ ] IndexNow pings Bing on every production deploy <!-- date -->
+- [x] Verified in Google Search Console (confirmed 2026-11-20)
+- [x] Sitemap submitted in Google Search Console (URL inspection shows "Submitted and indexed", 2026-11-20)
+- [x] Verified in Bing Webmaster Tools, sitemap submitted (Mika confirmed 2026-11-20)
+- [ ] Submitted to Brave Search (https://search.brave.com/submit-url) <!-- Not yet as of 2026-11-20 -->
+- [ ] IndexNow pings Bing on every production deploy <!-- Not set up as of 2026-11-20; in the audit's Crawl files package -->
 - **Credit budget:** <!-- Not set. Account balance was 19,811 credits on 2026-11-19, shared with the Adeli, LedaChat and Mika Reyes projects. -->

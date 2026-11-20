@@ -1,0 +1,16 @@
+== http://content-creation-skills.com
+HTTP/1.0 308 Permanent Redirect
+Location: https://content-creation-skills.com/
+HTTP/2 200 
+== https://content-creation-skills.com
+HTTP/2 200 
+== http://www.content-creation-skills.com
+HTTP/1.0 308 Permanent Redirect
+Location: https://www.content-creation-skills.com/
+HTTP/2 308 
+location: https://content-creation-skills.com/
+HTTP/2 200 
+== https://www.content-creation-skills.com
+HTTP/2 308 
+location: https://content-creation-skills.com/
+HTTP/2 200 
