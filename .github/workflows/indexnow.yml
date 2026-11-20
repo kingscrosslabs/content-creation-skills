@@ -1,0 +1,70 @@
+# Tells IndexNow (Bing, Yandex, Seznam, Naver and others) about every URL in the
+# sitemap after each successful Vercel production deploy.
+# Vercel names the production environment "Production – <project-name>" (with an
+# en dash), so match the prefix. Preview deploys ("Preview – ...") are skipped.
+name: IndexNow
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+
+jobs:
+  ping:
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      startsWith(github.event.deployment.environment, 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      HOST: content-creation-skills.com
+      KEY: d292d32d9eca0563ea3624c1b673700e
+      ENVIRONMENT: ${{ github.event.deployment.environment }}
+    steps:
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          set -euo pipefail
+          echo "Environment: $ENVIRONMENT"
+
+          # Fetch the live sitemap (retry briefly in case the CDN is still warming up).
+          sitemap=""
+          for i in 1 2 3 4 5; do
+            if sitemap=$(curl -fsSL "https://${HOST}/sitemap-0.xml"); then break; fi
+            echo "Sitemap fetch failed (attempt $i), retrying in 10s"
+            sleep 10
+          done
+          if [ -z "$sitemap" ]; then
+            echo "::error::Could not fetch https://${HOST}/sitemap-0.xml"
+            exit 1
+          fi
+
+          urls=$(printf '%s' "$sitemap" | grep -o '<loc>[^<]*</loc>' | sed -e 's|<loc>||' -e 's|</loc>||')
+          if [ -z "$urls" ]; then
+            echo "::error::No <loc> entries in the sitemap"
+            exit 1
+          fi
+          echo "URLs to submit:"
+          echo "$urls"
+
+          payload=$(printf '%s\n' "$urls" | jq -R . | jq -s \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --arg loc "https://${HOST}/${KEY}.txt" \
+            '{host: $host, key: $key, keyLocation: $loc, urlList: .}')
+          echo "$payload"
+
+          status=$(curl -sS -o response.txt -w '%{http_code}' \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$payload")
+          echo "IndexNow HTTP status: $status"
+          cat response.txt || true
+          case "$status" in
+            200|202) echo "IndexNow accepted the URLs." ;;
+            *) echo "::error::IndexNow returned HTTP $status"; exit 1 ;;
+          esac
