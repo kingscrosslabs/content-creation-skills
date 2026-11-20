@@ -1,11 +1,14 @@
 # Tells IndexNow (Bing, Yandex, Seznam, Naver and others) about every URL in the
 # sitemap after each successful Vercel production deploy.
-# Vercel names the production environment "Production – <project-name>" (with an
-# en dash), so match the prefix. Preview deploys ("Preview – ...") are skipped.
+# Vercel reports deploys to GitHub as commit statuses (context "Vercel"), not as
+# GitHub deployments, so this listens for a successful "Vercel" status on a commit
+# that's on main (production). Preview deploys are on other branches and skipped.
+# workflow_dispatch lets you re-run it by hand from the Actions tab.
 name: IndexNow
 
 on:
-  deployment_status:
+  status:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -17,19 +20,21 @@ concurrency:
 jobs:
   ping:
     if: >-
-      github.event.deployment_status.state == 'success' &&
-      startsWith(github.event.deployment.environment, 'Production')
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.context == 'Vercel' &&
+       github.event.state == 'success' &&
+       contains(github.event.branches.*.name, 'main'))
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
       HOST: content-creation-skills.com
       KEY: d292d32d9eca0563ea3624c1b673700e
-      ENVIRONMENT: ${{ github.event.deployment.environment }}
+      TRIGGER: ${{ github.event_name }} ${{ github.event.sha }}
     steps:
       - name: Submit sitemap URLs to IndexNow
         run: |
           set -euo pipefail
-          echo "Environment: $ENVIRONMENT"
+          echo "Trigger: $TRIGGER"
 
           # Fetch the live sitemap (retry briefly in case the CDN is still warming up).
           sitemap=""
